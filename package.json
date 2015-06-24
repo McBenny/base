@@ -1,0 +1,31 @@
+{
+  "name": "git-base",
+  "version": "0.0.1",
+  "description": "Primary elements of any project",
+  "main": "index.js",
+  "dependencies": {
+    "auto-reload-brunch": "^1.8.0",
+    "brunch": "^1.8.3",
+    "javascript-brunch": "^1.7.1",
+    "sass-brunch": "^1.8.10",
+    "sprite-brunch": "^0.0.3",
+    "css-brunch": "^1.7.0",
+    "uglify-js-brunch": "^1.7.8"
+  },
+  "devDependencies": {
+    "brunch": "^1.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/McBenny/base.git"
+  },
+  "author": "Benoit ADAM <benoit.adam@fullsix.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McBenny/base/issues"
+  },
+  "homepage": "https://github.com/McBenny/base"
+}

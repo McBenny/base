@@ -13,8 +13,13 @@ exports.config =
   files:
     javascripts:
       joinTo:
-        'js/scripts/vendor.js': /^bower_components/
+        'js/scripts/vendor.js': /^(vendor|bower_components)/
         'js/main.js': /^app/
+      order:
+        before: [
+          'app/scripts/functionals/base.js',
+          'app/scripts/functionals/general.js'
+        ]
 
     stylesheets:
       defaultExtension: 'scss'

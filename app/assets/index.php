@@ -35,13 +35,13 @@ if ($dev) {
 ?>
 
 
-<?php /* include ($path.'/includes/header.php'); ?>
+<?php /*include ($path.'/includes/header.php');*/ ?>
 
-<?php include ($path.'/includes/headband.php'); ?>
+<?php /*include ($path.'/includes/headband.php');*/ ?>
 
-<?php include ($path.'/includes/footer.php'); ?>
+<?php /*include ($path.'/includes/footer.php');*/ ?>
 
-<?php include ($path.'/includes/foot__javascripts.php');*/ ?>
+<?php include ($path.'/includes/foot__javascripts.php'); ?>
 
 </body>
 </html>

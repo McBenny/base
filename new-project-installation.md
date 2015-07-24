@@ -12,6 +12,11 @@ If **Bower** is not yet installed on your system, install it with the command li
 * `bower install inuit.css --save-dev`
 * ...
 
+**Warning**  
+A check is needed into the inuit.css component: It appears that to date, a missing property in the .bower.json causes problems in further Brunch actions. To correct it:
+* edit `\bower_components\inuit.css\.bower.json`,
+* if missing, add the `"main": "_inuit.scss",` line as first line into the first curly brace.
+
 And save your work with `bower init` (creates the bower.json file).
 
 ##Install other node modules

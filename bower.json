@@ -1,11 +1,10 @@
 {
-  "name": "Project-name",
+  "name": "git-base",
   "version": "0.0.1",
   "homepage": "https://github.com/McBenny/base",
   "authors": [
     "Benoit ADAM <benoit.adam@fullsix.com>"
   ],
-  "description": "Primary elements of any project",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -16,6 +15,6 @@
   ],
   "dependencies": {
     "inuit.css": "~5.0.1",
-    "jquery": "~2.1.4"
+    "jquery": "1"
   }
 }

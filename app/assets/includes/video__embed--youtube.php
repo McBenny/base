@@ -6,7 +6,7 @@
 ?>
 <div id="ytplayer"></div>
 
-<script>
+<script type="text/javascript">
 // Load the IFrame Player API code asynchronously.
 var tag = document.createElement('script'),
 	firstScriptTag = document.getElementsByTagName('script')[0],

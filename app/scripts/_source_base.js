@@ -92,48 +92,11 @@ base = function () {
 	},
 
 /*
-	This function return the value of "data-" attribute or the default provided value
-*/
-	findData = function (elt, param, parDefaut) {
-		return elt.data(param) !== undefined ? elt.data(param) : parDefaut;
-	},
-
-/*
 	Extract a Url from a background-image value
 */
 	extractUrl = function (input) {
 		return input.replace(/"/g,"").replace(/url\(|\)$/ig, "");
 	},
-
-/*
-	Basic texts in various languages...
-*/
-	trads = {
-		'fr':	{
-			'fermer':	'Fermer',
-			'confirm':	'Etes-vous sûr de vouloir effectuer cette action ?',
-			'loading':	'Chargement en cours, veuillez patienter...'
-		},
-		'en':	{
-			'fermer':	'Close',
-			'confirm':	'Are you sure to execute this action?',
-			'loading':	'Loading, please wait...'
-		}
-	},
-
-/*
-	Égalisation de tailles de colonnes
-*/
-	columnizer = function ($myArea, $myColumn) {
-		$($myArea).each(function () {
-			var hauteur = 0;
-			$(this).find($myColumn).each(function () {
-				hauteur = $(this).height() < hauteur ? hauteur : $(this).height();
-			});
-			$(this).find($myColumn).height(hauteur);
-		});
-	},
-
 
 /*
 	This function handles ajax' type form calls

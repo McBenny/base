@@ -13,23 +13,6 @@ customFunctions = function () {
 	},
 
 /*
-	This function finishes design
-*/
-	finishDesign = function () {
-		var design = "<span class=\"design\" />";
-
-// Égalisation de la taille des listes en pied de page
-//		base.columnizer("#sitemap", ".col");
-
-/*
-		if ($.browser.msie == true && $.browser.version == 7) {
-			initIE7();
-		}
-*/
-		return true;
-	},
-
-/*
 	Faux parallax
 */
 	fakeParallax = function () {
@@ -40,81 +23,6 @@ customFunctions = function () {
 		}
 	},
 
-/*
-	This function intercepts natural behaviour to enhance user experience
-*/
-	enhanceBehaviour = function () {
-
-// Rend le LI contenant le A réactif
-//		base.enlargeClick("nav > ul > li");
-
-		var scrollToElt = function (elt, delay) {
-			$(document).on("mousewheel DOMMouseScroll", function (e) {
-				e.preventDefault();
-			});
-			var documentBody = $.browser.chrome || $.browser.safari ? document.body : document.documentElement,
-			decalage = $("header").height() + $("#floatingBar").height() - 1;
-			$(documentBody).animate({scrollTop: $(elt).offset().top - decalage}, delay, "easeOutExpo", function () {
-				$(document)
-					.off("mousewheel DOMMouseScroll");
-			});
-		};
-
-// ByPass du clic sur une ancre par un scroll
-		$(".scrollToElt").on("click", function (e) {
-			var elt = $(this),
-			lAncre = elt.attr("href");
-			elt.parents("ul").find('li').removeClass("current");
-			elt.parent("li").addClass("current");
-			scrollToElt(lAncre, 2000);
-			e.preventDefault();
-		});
-
-// Actions Panier et parcours
-		$('#panier')
-// Retrait d'une unité d'un article
-			.find(".modifMoins").each(function () {
-				$(this).on("click", function (e) {
-					if (!$(this).hasClass("disabled")) {
-						base.sablier();
-						var leMin = $(this).attr("data-min"),
-						lIncrement = $(this).attr("data-qte"),
-						laQte = $(this).siblings(".qte").val();
-						if (laQte - lIncrement >= leMin) {
-							$(this).siblings(".qte").val(laQte - lIncrement);
-							$(this).parents("form").submit();
-						}
-					}
-					e.preventDefault();
-				});
-			})
-			.end()
-// Ajout d'une unité d'un article
-			.find(".modifPlus").each(function () {
-				$(this).on("click", function (e) {
-					if (!$(this).hasClass("disabled")) {
-						base.sablier();
-						var leMax = $(this).attr("data-max"),
-						lIncrement = $(this).attr("data-qte"),
-						laQte = $(this).siblings(".qte").val();
-						if (parseInt(laQte) + parseInt(lIncrement) <= leMax) {
-							$(this).siblings(".qte").val(parseInt(laQte) + parseInt(lIncrement));
-							$(this).parents("form").submit();
-						}
-					}
-					e.preventDefault();
-				});
-			})
-			.end()
-// Suppression d'un article
-			.find(".supprBtn").each(function () {
-				$(this).on("click", function (e) {
-					$(this).parents("form").submit();
-					e.preventDefault();
-				});
-		});
-		return true;
-	},
 
 	initIE7 = function () {
 		return true;

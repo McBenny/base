@@ -35,16 +35,15 @@
  * 		- Handling environment	FIND_ENV
  * 			.Console			FIND_CONSOLE
  * 			.Variables			FIND_VARS
- * 		- Functions				FIND_FUNCTIONS
- * 			.Find data 			FIND_DATA
+ * 		 	.Translations		FIND_TRANSLATIONS
  * 		- Public return 		FIND_PUBLIC
  * 		
  */
 
 /**
  *  This file is dependent on: jquery
+ *  All the elements below are accessible through the _base prefix: _base.nameOfTheElement, ie: _base.translations.fr.close.
  */
-(function ($) {
 
 
 
@@ -99,7 +98,10 @@
 
 
 
-var base = function () {
+var _base = function () {
+
+
+
 //	FIND_VARS
 		/*
 			Yb    dP    db    88""Yb 88    db    88""Yb 88     888888 .dP"Y8 
@@ -107,45 +109,38 @@ var base = function () {
 			  YbdP    dP__Yb  88"Yb  88  dP__Yb  88""Yb 88  .o 88""   o.`Y8b 
 			   YP    dP""""Yb 88  Yb 88 dP""""Yb 88oodP 88ood8 888888 8bodP' 
 		*/
-	var vars = {
-		html: $("html")
+/**
+ * html: a shortcut to access DOM
+ * customData: a var where you can store any var you need, push any content inside and retrieve it elsewhere
+ * pageLng: the language of the page from the HTML lang attribute or "default"
+ */
+		html: $("html"),
+		customData: {},
+		pageLng: $("html").attr("lang") !== undefined && $("html").attr("lang") !== "" ? $('html').attr("lang") : "default"
 	},
 
 
 
-
-
-//	FIND_FUNCTIONS
-/*
-	 /$$$$$$$$                              /$$     /$$                              
-	| $$_____/                             | $$    |__/                              
-	| $$    /$$   /$$ /$$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
-	| $$$$$| $$  | $$| $$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
-	| $$__/| $$  | $$| $$  \ $$| $$        | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$ 
-	| $$   | $$  | $$| $$  | $$| $$        | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
-	| $$   |  $$$$$$/| $$  | $$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
-	|__/    \______/ |__/  |__/ \_______/   \___/  |__/ \______/ |__/  |__/|_______/ 
-	                                                                                 
-	                                                                                 
-	                                                                                 
-*/
-//	FIND_DATA
+//	FIND_TRANSLATIONS
 		/*
-			888888 88 88b 88 8888b.      8888b.     db    888888    db    
-			88__   88 88Yb88  8I  Yb      8I  Yb   dPYb     88     dPYb   
-			88""   88 88 Y88  8I  dY      8I  dY  dP__Yb    88    dP__Yb  
-			88     88 88  Y8 8888Y"      8888Y"  dP""""Yb   88   dP""""Yb 
+			888888 88""Yb    db    88b 88 .dP"Y8 88        db    888888 88  dP"Yb  88b 88 .dP"Y8 
+			  88   88__dP   dPYb   88Yb88 `Ybo." 88       dPYb     88   88 dP   Yb 88Yb88 `Ybo." 
+			  88   88"Yb   dP__Yb  88 Y88 o.`Y8b 88  .o  dP__Yb    88   88 Yb   dP 88 Y88 o.`Y8b 
+			  88   88  Yb dP""""Yb 88  Y8 8bodP' 88ood8 dP""""Yb   88   88  YbodP  88  Y8 8bodP' 
 		*/
-/**
- *	@description This function returns the value of "data-" attribute or the default provided value if not found
- *	@author  [Benoit Adam]
- *	@param 	 {jQuerySelector} elt 		  the tag where to find the data attribute
- *	@param 	 {string} 		  param 	  the data attribute to parse
- *	@param 	 {string} 		  [byDefault] the default value to return if the data attribute is not found or empty
- *	@returns {string} 					  the value of the data attribute found or the default value passed
- */
-	findData = function (elt, param, byDefault) {
-		return elt.data(param) !== undefined ? elt.data(param) : byDefault;
+	translations = {
+		default: {
+			close: "close",
+			loading: "loading"
+		},
+		en: {
+			close: "close",
+			loading: "loading"
+		},
+		fr: {
+			close: "fermer",
+			loading: "chargement en cours"
+		}
 	};
 
 
@@ -161,11 +156,8 @@ var base = function () {
 		*/
 	return {
 		vars: vars,
-		findData: findData()
+		translations: translations
 	};
-};
+}();
 //	END OF "BASE"
 
-
-
-})(jQuery);

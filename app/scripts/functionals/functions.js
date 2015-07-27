@@ -39,13 +39,18 @@
  * 			.Enlarge click		FIND_ENLARGECLICK
  * 			.Scroll to elt 		FIND_SCROLLTO
  * 		- Replacements			FIND_REPLACE
+ * 			.Insert iFrame		FIND_IFRAME
+ * 			.Insert Flash		FIND_FLASH
+ * 			.Encode mailto 		FIND_MAILTO
+ * 		- Public return 		FIND_PUBLIC
  * 		
  */
 
 /**
  *  This file is dependent on: jquery
+ *  All the functions below are accessible through the _functions prefix: _functions.nameOfTheFunction(), ie: _functions.handleBasicBehaviours().
  */
-(function ($) {
+var _functions = function() {
 
 
 
@@ -92,10 +97,10 @@
 				e.preventDefault();
 				var myElt = $(this),
 					eltU = myElt.attr("href"),
-					eltW = base.findData(myElt, "width", null),
-					eltH = base.findData(myElt, "height", null),
-					eltT = base.findData(myElt, "target", null),
-					eltO = base.findData(myElt, "other", null),
+					eltW = _helpers.findData(myElt, "width", null),
+					eltH = _helpers.findData(myElt, "height", null),
+					eltT = _helpers.findData(myElt, "target", null),
+					eltO = _helpers.findData(myElt, "other", null),
 					params = eltW ? ",width=" + eltW : null;
 				params += eltH ? ",height=" + eltH : null;
 				params += eltO ? "," + eltO : null;
@@ -114,7 +119,7 @@
 /* 4 */		.filter(".confirm").off("click").on("click", function (e) {
 				var myElt = $(this),
 					eltU = myElt.attr("href"),
-					eltM = base.findData(myElt, "message", "Question?");
+					eltM = _helpers.findData(myElt, "message", "Question?");
 				if (window.confirm(eltM)) {
 					window.location.href = eltU;
 				}
@@ -255,14 +260,14 @@
  * @requires jquery.easing.1.3
  * @author [Benoit Adam]
  * @returns {null}
- * 	1) Au clic sur l'élément
- * 	2) Identification des éléments
- * 		a) récupération du lien ou du "pseudo-lien"
- * 	3) Désactivation du scroll molette et du scroll touch
- *  4) Animation jusqu'à l'ancre visée,
- *  	4.1) Avec effet "easing",
- *  	4.2) Réactivation des scroll molette et touch,
- *  	4.3) Mise à jour de l'URL
+ * 	1) On click on the selected element
+ * 	2) Identifying the elements
+ * 		a) getting the link or pseudo-link
+ * 	3) Deactivation of the mousescroll and touchscroll
+ *  4) Animation till the tagert anchor,
+ *  	4.1) Effect with "easing",
+ *  	4.2) Reactivation of the scrolls,
+ *  	4.3) Update of the URL with the #anchor
  */
 	scrollToElt = function () {
 /* 1 */	$(".jsHook.scrollToElt").on("click", function (e) {
@@ -307,12 +312,26 @@
 	                    | $$                                                                                             
 	                    |__/                                                                                             
 */
+//	FIND_IFRAME
+//	FIND_FLASH
+		/*
+			88 888888 88""Yb    db    8b    d8 888888 88 88b 88 .dP"Y8 888888 88""Yb 888888 
+			88 88__   88__dP   dPYb   88b  d88 88__   88 88Yb88 `Ybo." 88__   88__dP   88   
+			88 88""   88"Yb   dP__Yb  88YbdP88 88""   88 88 Y88 o.`Y8b 88""   88"Yb    88   
+			88 88     88  Yb dP""""Yb 88 YY 88 888888 88 88  Y8 8bodP' 888888 88  Yb   88   
+		*/
+		/*
+			888888 88        db    .dP"Y8 88  88 88""Yb 888888 88""Yb 88        db     dP""b8 888888 
+			88__   88       dPYb   `Ybo." 88  88 88__dP 88__   88__dP 88       dPYb   dP   `" 88__   
+			88""   88  .o  dP__Yb  o.`Y8b 888888 88"Yb  88""   88"""  88  .o  dP__Yb  Yb      88""   
+			88     88ood8 dP""""Yb 8bodP' 88  88 88  Yb 888888 88     88ood8 dP""""Yb  YboodP 888888 
+		*/
 /*
 	This function handles iframe and flash replacements
 
 ---------> iframes
 	code:
-		JS:	base.contentReplacement();
+		JS:	_base.contentReplacement();
 		HTML:
 			<div class="iframeCtnr">
 				<span class="eltData" data-url="http://www.domain.com" data-width="800" data-height="600"><a href="http://www.domain.com">get the content</a></span>
@@ -321,14 +340,14 @@
 	If width and height are not supplied, their values are set to "100%"
 	"iframeCtnr" is the default called class but you can customize it. Several class names can be used at the same time.
 	code:
-		JS:	base.contentReplacement({iframe:["myIframe"]});
-		JS:	base.contentReplacement({iframe:["myIframe", "myOtherIframeClass"]});
+		JS:	_base.contentReplacement({iframe:["myIframe"]});
+		JS:	_base.contentReplacement({iframe:["myIframe", "myOtherIframeClass"]});
 		HTML:	<div class="myIframe">...
 
 
 ---------> flash
 	code:
-		JS:	base.contentReplacement();
+		JS:	_base.contentReplacement();
 		HTML:
 			<div class="flashCtnr">
 				<span class="eltData accessibility" data-url="path/to/the/file.swf" data-wmode="opaque" data-width="w" data-height="h">path/to/the/file.swf</span>
@@ -338,8 +357,8 @@
 	If width and height are not supplied, their values are set to "100%"
 	"flashCtnr" is the default called class but you can customize it. Several class names can be used at the same time.
 	code:
-		JS:	base.contentReplacement({flash:["myFlash"]});
-		JS:	base.contentReplacement({flash:["myFlash", "myOtherFlashClass"]});
+		JS:	_base.contentReplacement({flash:["myFlash"]});
+		JS:	_base.contentReplacement({flash:["myFlash", "myOtherFlashClass"]});
 		HTML:	<div class="myFlash">...
 */
 	contentReplacement = function (params) {
@@ -359,9 +378,9 @@
 		flashSelectorString = selectorStringBuilder(flashClassNames);
 		$(iframeSelectorString).each(function () {
 			var myElt = $(this).find(".eltData"),
-			eltU = base.findData(myElt, "url", false),
-			eltW = base.findData(myElt, "width", "100%"),
-			eltH = base.findData(myElt, "height", "100%");
+			eltU = _base.findData(myElt, "url", false),
+			eltW = _base.findData(myElt, "width", "100%"),
+			eltH = _base.findData(myElt, "height", "100%");
 			if (eltU) {
 				$("*", this).remove();
 				$(this)
@@ -372,10 +391,10 @@
 		});
 		$(flashSelectorString).each(function () {
 			var myElt = $(this).find(".eltData"),
-			eltU = base.findData(myElt, "url", false),
-			eltM = base.findData(myElt, "wmode", "transparent"),
-			eltW = base.findData(myElt, "width", "100%"),
-			eltH = base.findData(myElt, "height", "100%");
+			eltU = _base.findData(myElt, "url", false),
+			eltM = _base.findData(myElt, "wmode", "transparent"),
+			eltW = _base.findData(myElt, "width", "100%"),
+			eltH = _base.findData(myElt, "height", "100%");
 			if (eltU) {
 				$("*", this).remove();
 				$(this).media({
@@ -391,7 +410,88 @@
 				});
 			}
 		});
+	},
+
+
+
+//	FIND_MAILTO
+		/*
+			8b    d8    db    88 88     888888  dP"Yb  
+			88b  d88   dPYb   88 88       88   dP   Yb 
+			88YbdP88  dP__Yb  88 88  .o   88   Yb   dP 
+			88 YY 88 dP""""Yb 88 88ood8   88    YbodP  
+		*/
+/*
+	This function translates obfuscated e-mail addresses into fully functional mailtos
+	Class to listen: functionName(['class1', 'class2']);
+	Default class to listen: 'courriel'
+	To provide a default subject, type it into the rel attribute and add the subject classname as a second parameter: functionName(['class1', 'class2'], 'subjectClass');
+	Default class to listen for subject: 'subject'
+*/
+	emailBuilder = function (mailtoClassNames, subjectClass) {
+		var selectorString = "",
+			separator = "",
+			i = 0,
+			pattern = /^http:\/\/www\.([^\/]+)\/(.*?)(\.(html|htm|php|asp))?$/,
+			humanDetected = false,
+			human = function () {};
+		subjectClass = typeof subjectClass != "undefined" ? subjectClass : "subject";
+		mailtoClassNames = typeof mailtoClassNames != "undefined" ? mailtoClassNames : ["courriel"];
+		for (i; i < mailtoClassNames.length; i++) {
+			selectorString += separator + "a." + mailtoClassNames[i];
+			separator = ", ";
+		}
+		human = function () {
+			humanDetected = true;
+			$(selectorString).each(function () {
+				if (pattern.test($(this).html())) {
+					$(this).html($(this).html().replace(pattern, "$2@$1"));
+				} else {
+					var monSpan = $("span.accessibility", this);
+					if (monSpan.html() !== null) {
+						if (monSpan.html().match(pattern)) {
+							monSpan.html(monSpan.html().replace(pattern, "$2@$1"));
+						}
+					}
+				}
+			});
+		};
+		if (!humanDetected) {
+			$(document).mousemove(human).keypress(human);
+		}
+		if (touchDevice) {
+			human();
+			humanDetected = true;
+		}
+		$(selectorString).on("click", function () {
+			if (!humanDetected) {
+				return false;
+			}
+			if (pattern.test(this.href)) {
+				var subject = $(this).attr("data-rel");
+				this.href = $(this).hasClass(subjectClass) ? this.href.replace(pattern, "mailto:$2@$1" + "?Subject=" + subject) : this.href = this.href.replace(pattern, "mailto:$2@$1");
+			}
+		});
+		return false;
 	};
 
 
-})(jQuery);
+
+
+
+//	FIND_PUBLIC
+		/*
+			88""Yb 888888 888888 88   88 88""Yb 88b 88 
+			88__dP 88__     88   88   88 88__dP 88Yb88 
+			88"Yb  88""     88   Y8   8P 88"Yb  88 Y88 
+			88  Yb 888888   88   `YbodP' 88  Yb 88  Y8 
+		*/
+	return {
+		handleBasicBehaviours: handleBasicBehaviours,
+//		sizesEgalizer: sizesEgalizer,
+//		enlargeClick: enlargeClick,
+//		scrollToElt: scrollToElt,
+//		contentReplacement: contentReplacement,
+//		emailBuilder: emailBuilder
+	};
+}();

@@ -40,6 +40,7 @@
  * 			.navigation URLs	FIND_NAV
  * 		- Development			FIND_DEV
  * 			.variables			FIND_DEV_VARS
+ * 			
  */
 
 
@@ -162,12 +163,11 @@ $googleAnalytics = array(
 			88  Y8 dP""""Yb    YP    88  YboodP dP""""Yb   88   88  YbodP  88  Y8     `YbodP' 88  Yb 88ood8 8bodP' 
 		*/
 $navigation__urls = array(
-	'mission' => '#mission',
-	'group' => '#group',
+	'products' => '#products',
 	'services' => '#services',
 	'contact' => '#contact'
 );
-$contact__mail = 'contact@fullsixair.com';
+$contact__mail = 'contact@domain.com';
 
 
 

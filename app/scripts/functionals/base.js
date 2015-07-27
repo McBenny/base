@@ -113,10 +113,13 @@ var _base = function () {
  * html: a shortcut to access DOM
  * customData: a var where you can store any var you need, push any content inside and retrieve it elsewhere
  * pageLng: the language of the page from the HTML lang attribute or "default"
+ * @type {[type]}
  */
+	var vars = {
 		html: $("html"),
 		customData: {},
-		pageLng: $("html").attr("lang") !== undefined && $("html").attr("lang") !== "" ? $('html').attr("lang") : "default"
+		pageLng: $("html").attr("lang") !== undefined && $("html").attr("lang") !== "" ? $("html").attr("lang") : "default",
+		touch: false
 	},
 
 
@@ -159,5 +162,3 @@ var _base = function () {
 		translations: translations
 	};
 }();
-//	END OF "BASE"
-

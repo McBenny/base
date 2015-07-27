@@ -1,95 +1,7 @@
 ﻿//é
 
-$(document).ready(function () {
-//	base.is_touch_device();
-//	base.getAvailWidth();
-	base.handleBasicBehaviours();
-	base.handleAjax();
-	base.forms.placeHolder();
-	base.forms.autoSize();
-	base.emailDeObfuscator(['emails']);
-});
+var base = function () {
 
-$(window)
-	.load(function () {
-		base.contentReplacement();
-		base.handleIE6();
-//		base.splitLst(idElt, classElt, classLi, nbLst);
-//	}).resize(function () {
-//		base.getAvailWidth();
-	});
-
-
-var touchDevice = false,
-de1281aPlus = true,
-de1025a1280 = false,
-de641a1024 = false,
-de0a640 = false,
-console = (console === undefined) ? { log: function (logMsg) { } } : console,
-base = function () {
-/* Modernizr 2.0.6 (Custom Build: csscolumns | input(attr) | touch events ) | MIT & BSD
- * Build: http://www.modernizr.com/download/#-csscolumns-input-iepp-cssclasses-testprop-testallprops-domprefixes-load
- */
-//	window.Modernizr = function (a,b,c) {function A(){e.input=function(a){for(var b=0,c=a.length;b<c;b++)p[a[b]]=a[b]in k;return p}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" "))}function z(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+m.join(c+" ")+c).split(" ");return y(d,b)}function y(a,b){for(var d in a)if(j[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function x(a,b){return!!~(""+a).indexOf(b)}function w(a,b){return typeof a===b}function v(a,b){return u(prefixes.join(a+";")+(b||""))}function u(a){j.cssText=a}var d="2.0.6",e={},f=b.documentElement,g=b.head||b.getElementsByTagName("head")[0],h="modernizr",i=b.createElement(h),j=i.style,k=b.createElement("input"),l=Object.prototype.toString,m="Webkit Moz O ms Khtml".split(" "),n={},o={},p={},q=[],r,s={}.hasOwnProperty,t;!w(s,c)&&!w(s.call,c)?t=function(a,b){return s.call(a,b)}:t=function(a,b){return b in a&&w(a.constructor.prototype[b],c)},n.csscolumns=function(){return z("columnCount")};for(var B in n)t(n,B)&&(r=B.toLowerCase(),e[r]=n[B](),q.push((e[r]?"":"no-")+r));e.input||A(),u(""),i=k=null,e._version=d,e._domPrefixes=m,e.testProp=function(a){return y([a])},e.testAllProps=z;return e}(this,this.document);
-
-/* Modernizr 2.5.3 (Custom Build: CSS columns | Input Attributes) | MIT & BSD
- * Build: http://www.modernizr.com/download/#-csscolumns-input-testprop-testallprops-domprefixes
- */
-//	window.Modernizr=function(a,b,c){function w(a){i.cssText=a}function x(a,b){return w(prefixes.join(a+";")+(b||""))}function y(a,b){return typeof a===b}function z(a,b){return!!~(""+a).indexOf(b)}function A(a,b){for(var d in a)if(i[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function B(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:y(f,"function")?f.bind(d||b):f}return!1}function C(a,b,c){var d=a.charAt(0).toUpperCase()+a.substr(1),e=(a+" "+m.join(d+" ")+d).split(" ");return y(b,"string")||y(b,"undefined")?A(e,b):(e=(a+" "+n.join(d+" ")+d).split(" "),B(e,b,c))}function D(){e.input=function(c){for(var d=0,e=c.length;d<e;d++)q[c[d]]=c[d]in j;return q.list&&(q.list=!!b.createElement("datalist")&&!!a.HTMLDataListElement),q}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" "))}var d="2.5.3",e={},f=b.documentElement,g="modernizr",h=b.createElement(g),i=h.style,j=b.createElement("input"),k={}.toString,l="Webkit Moz O ms",m=l.split(" "),n=l.toLowerCase().split(" "),o={},p={},q={},r=[],s=r.slice,t,u={}.hasOwnProperty,v;!y(u,"undefined")&&!y(u.call,"undefined")?v=function(a,b){return u.call(a,b)}:v=function(a,b){return b in a&&y(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=s.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(s.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(s.call(arguments)))};return e}),o.csscolumns=function(){return C("columnCount")};for(var E in o)v(o,E)&&(t=E.toLowerCase(),e[t]=o[E](),r.push((e[t]?"":"no-")+t));return e.input||D(),w(""),h=j=null,e._version=d,e._domPrefixes=n,e._cssomPrefixes=m,e.testProp=function(a){return A([a])},e.testAllProps=C,e}(this,this.document);
-
-/* Modernizr 2.6.1 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-csscolumns-input-cssclasses-testprop-testallprops-domprefixes
- */
-//	window.Modernizr=function(a,b,c){function x(a){j.cssText=a}function y(a,b){return x(prefixes.join(a+";")+(b||""))}function z(a,b){return typeof a===b}function A(a,b){return!!~(""+a).indexOf(b)}function B(a,b){for(var d in a){var e=a[d];if(!A(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function C(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:z(f,"function")?f.bind(d||b):f}return!1}function D(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+n.join(d+" ")+d).split(" ");return z(b,"string")||z(b,"undefined")?B(e,b):(e=(a+" "+o.join(d+" ")+d).split(" "),C(e,b,c))}function E(){e.input=function(c){for(var d=0,e=c.length;d<e;d++)r[c[d]]=c[d]in k;return r.list&&(r.list=!!b.createElement("datalist")&&!!a.HTMLDataListElement),r}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" "))}var d="2.6.1",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k=b.createElement("input"),l={}.toString,m="Webkit Moz O ms",n=m.split(" "),o=m.toLowerCase().split(" "),p={},q={},r={},s=[],t=s.slice,u,v={}.hasOwnProperty,w;!z(v,"undefined")&&!z(v.call,"undefined")?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=t.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(t.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(t.call(arguments)))};return e}),p.csscolumns=function(){return D("columnCount")};for(var F in p)w(p,F)&&(u=F.toLowerCase(),e[u]=p[F](),s.push((e[u]?"":"no-")+u));return e.input||E(),e.addTest=function(a,b){if(typeof a=="object")for(var d in a)w(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},x(""),i=k=null,e._version=d,e._domPrefixes=o,e._cssomPrefixes=n,e.testProp=function(a){return B([a])},e.testAllProps=D,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+s.join(" "):""),e}(this,this.document);
-
-/* Modernizr 2.6.2 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-csscolumns-input-cssclasses-testprop-testallprops-domprefixes
- */
-	window.Modernizr=function(a,b,c){function x(a){j.cssText=a}function y(a,b){return x(prefixes.join(a+";")+(b||""))}function z(a,b){return typeof a===b}function A(a,b){return!!~(""+a).indexOf(b)}function B(a,b){for(var d in a){var e=a[d];if(!A(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function C(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:z(f,"function")?f.bind(d||b):f}return!1}function D(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+n.join(d+" ")+d).split(" ");return z(b,"string")||z(b,"undefined")?B(e,b):(e=(a+" "+o.join(d+" ")+d).split(" "),C(e,b,c))}function E(){e.input=function(c){for(var d=0,e=c.length;d<e;d++)r[c[d]]=c[d]in k;return r.list&&(r.list=!!b.createElement("datalist")&&!!a.HTMLDataListElement),r}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" "))}var d="2.6.2",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k=b.createElement("input"),l={}.toString,m="Webkit Moz O ms",n=m.split(" "),o=m.toLowerCase().split(" "),p={},q={},r={},s=[],t=s.slice,u,v={}.hasOwnProperty,w;!z(v,"undefined")&&!z(v.call,"undefined")?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=t.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(t.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(t.call(arguments)))};return e}),p.csscolumns=function(){return D("columnCount")};for(var F in p)w(p,F)&&(u=F.toLowerCase(),e[u]=p[F](),s.push((e[u]?"":"no-")+u));return e.input||E(),e.addTest=function(a,b){if(typeof a=="object")for(var d in a)w(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},x(""),i=k=null,e._version=d,e._domPrefixes=o,e._cssomPrefixes=n,e.testProp=function(a){return B([a])},e.testAllProps=D,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+s.join(" "):""),e}(this,this.document);
-
-/*
-	This function adds a 'touch' class in the html tag if a touch device is detected
-*/
-	var is_touch_device = function () {
-		try {
-			if (!$('html').hasClass('chrome')) {
-				document.createEvent("TouchEvent");
-				$('html').addClass('touch');
-				touchDevice = true;
-				return true;
-			}
-		} catch (e) {
-			return false;
-		}
-	},
-
-/*
-	Determinates the width of the browser window
-	Must be launched in $(document).ready() and relaunched in $(window).resize()
-*/
-	getAvailWidth = function () {
-		if (matchMedia) {
-			if (window.matchMedia("(min-width: 1281px)").matches) {
-				de1281aPlus = true;
-			} else {
-				de1281aPlus = false;
-				if (window.matchMedia("(min-width: 1025px)").matches) {
-					de1025a1280 = true;
-				} else {
-					de1025a1280 = false;
-					if (window.matchMedia("(min-width: 641px)").matches) {
-						de641a1024 = true;
-					} else {
-						de641a1024 = false;
-						de0a640 = true;
-					}
-				}
-			}
-//		} else {
-//console.log('Pas matchmedia');
-		}
-//console.log($(window).width(), 'de1281aPlus:' + de1281aPlus, 'de1025a1280:' + de1025a1280, 'de641a1024:' + de641a1024, 'de0a640:' + de0a640);
-	},
 
 /*
 	Extract a Url from a background-image value
@@ -492,10 +404,7 @@ Object.size = function (obj) {
 
 // Public elements :
 	return {
-		is_touch_device:	is_touch_device,
-		getAvailWidth:		getAvailWidth,
 		extractUrl:		extractUrl,
-		columnizer:		columnizer,
 		handleAjax:		handleAjax,
 		handleIE6:		handleIE6,
 //		floatElt:		floatElt,

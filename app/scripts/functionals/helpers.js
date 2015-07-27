@@ -33,6 +33,7 @@
 		 */
 /**
  * 		- Find data 			FIND_DATA
+ * 		- Is it a touch Device?	FIND_TOUCH
  * 		- Hourglass				FIND_HOURGLASS
  * 		- Public return 		FIND_PUBLIC
  * 		
@@ -65,8 +66,34 @@ var _helpers = function () {
  *	@param 	 {string} 		  [byDefault] the default value to return if the data attribute is not found or empty
  *	@returns {string} 					  the value of the data attribute found or the default value passed
  */
-	findData = function (elt, param, byDefault) {
+	var findData = function (elt, param, byDefault) {
 		return elt.data(param) !== undefined ? elt.data(param) : byDefault;
+	},
+
+
+
+//	FIND_TOUCH
+		/*
+			888888  dP"Yb  88   88  dP""b8 88  88  dP""b8 88        db    .dP"Y8 .dP"Y8 
+			  88   dP   Yb 88   88 dP   `" 88  88 dP   `" 88       dPYb   `Ybo." `Ybo." 
+			  88   Yb   dP Y8   8P Yb      888888 Yb      88  .o  dP__Yb  o.`Y8b o.`Y8b 
+			  88    YbodP  `YbodP'  YboodP 88  88  YboodP 88ood8 dP""""Yb 8bodP' 8bodP' 
+		*/
+/**
+ * @description This function adds a 'touch' class in the html tag if a touch device is detected
+ * @return {Boolean} [description]
+ */
+	isTouchDevice = function () {
+		try {
+			if (!_base.vars.html.hasClass("chrome")) {
+				document.createEvent("TouchEvent");
+				_base.vars.html.addClass("touch");
+				_base.vars.touch = true;
+				return true;
+			}
+		} catch (e) {
+			return false;
+		}
 	},
 
 
@@ -79,7 +106,7 @@ var _helpers = function () {
 			88  88  YbodP  `YbodP' 88  Yb  YboodP 88ood8 dP""""Yb 8bodP' 8bodP' 
 		*/
 	hourGlass = function () {
-		$('body').toggleClass('progress');
+		$("body").toggleClass("progress");
 		if (_base.vars.customData.documentTitle === undefined || _base.vars.customData.documentTitle === "") {
 			_base.vars.customData.documentTitle = document.title;
 			document.title = _base.translations[_base.vars.pageLng].loading + "...";
@@ -103,6 +130,7 @@ var _helpers = function () {
 		*/
 	return {
 		findData: findData,
+		isTouchDevice: isTouchDevice,
 		hourGlass: hourGlass
 	};
 
@@ -144,10 +172,10 @@ $.extend({
 	getUrlVars:	function () {
 				var vars = [],
 				hash,
-				hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&'),
+				hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"),
 				i = 0;
 				for (i; i < hashes.length; i++) {
-					hash = hashes[i].split('=');
+					hash = hashes[i].split("=");
 					vars.push(hash[0]);
 					vars[hash[0]] = hash[1];
 				}
@@ -174,7 +202,7 @@ $.extend({
 */
 $.fn.preload = function() {
 	this.each(function(){
-		$('<img/>').attr('src', this);
+		$("<img/>").attr("src", this);
 	});
 };
 
@@ -198,13 +226,13 @@ String.prototype.enhancedTrimLeft = function (charList) {
 	if (charList === undefined) {
 		charList = "\\s";
 	}
-	return this.replace(new RegExp("^[" + charList + "]+"), '');
+	return this.replace(new RegExp("^[" + charList + "]+"), "");
 };
 String.prototype.enhancedTrimRight = function (charList) {
 	if (charList === undefined) {
 		charList = "\\s";
 	}
-	return this.replace(new RegExp("[" + charList + "]+$"), '');
+	return this.replace(new RegExp("[" + charList + "]+$"), "");
 };
 String.prototype.enhancedTrim = function (charList) {
 	if (charList === undefined) {

@@ -21,7 +21,7 @@ exports.config =
           'app/scripts/functionals/base.js',
           'app/scripts/functionals/helpers.js'
           'app/scripts/functionals/functions.js'
-          'app/scripts/functionals/general.js'
+          'app/scripts/general.js'
         ]
 
     stylesheets:

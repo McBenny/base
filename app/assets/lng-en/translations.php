@@ -43,7 +43,7 @@ C:::::C             o::::o     o::::m::::m   m::::m   m::::m::::m   m::::m   m::
                                                                  
                                                                  
 */
-$project__name = 'Le Nom du Projet';
+$project__name = 'The Project Name';
 
 
 
@@ -65,7 +65,7 @@ $project__name = 'Le Nom du Projet';
 $head__meta__keywords = '';
 $head__meta__description = '';
 
-$head__title = 'Titre par défaut - '.$project__name;
+$head__title = 'Default title - '.$project__name;
 
 
 
@@ -76,7 +76,7 @@ $head__title = 'Titre par défaut - '.$project__name;
 			88  88 888888 dP""""Yb 8888Y"  888888 88  Yb 
 		*/
 $header__menu = 'Menu';
-$backHome = 'Retour à la page d\'accueil';
+$backHome = 'Back to the homepage';
 
 
 
@@ -87,13 +87,13 @@ $backHome = 'Retour à la page d\'accueil';
 			88  Y8 dP""""Yb    YP    88  YboodP dP""""Yb   88   88  YbodP  88  Y8 
 		*/
 $navigation__texts = array(
-	'products' => 'Nos produits',
-	'services' => 'Nos services',
+	'products' => 'Our Products',
+	'services' => 'Our Services',
 	'contact' => 'Contacts'
 );
-$navigation__search = 'Recherche';
-$contact__title = 'Contactez-nous';
-$contact__btn = 'Contactez-nous';
+$navigation__search = 'Search';
+$contact__title = 'Contact us';
+$contact__btn = 'Contact us';
 
 
 
@@ -103,7 +103,7 @@ $contact__btn = 'Contactez-nous';
 			888888 88""    dP__Yb   8I  dY 88""Yb  dP__Yb  88 Y88  8I  dY 
 			88  88 888888 dP""""Yb 8888Y"  88oodP dP""""Yb 88  Y8 8888Y"  
 		*/
-$headband__title = 'Le changement est dans l\'air';
+$headband__title = 'Change<br />is in<br />the <em>air</em>';
 
 
 
@@ -113,7 +113,7 @@ $headband__title = 'Le changement est dans l\'air';
 			Yb      Yb   dP 88 Y88   88    dP__Yb  Yb        88   
 			 YboodP  YbodP  88  Y8   88   dP""""Yb  YboodP   88   
 		*/
-$contact__title = 'Nos contacts';
+$contact__title = 'Our contacts';
 
 
 
@@ -132,7 +132,7 @@ $contact__title = 'Nos contacts';
                                                     
                                                     
 */
-$footer__back_to_top = 'Retour en haut de la page';
+$footer__back_to_top = 'Back to the top of the page';
 $footer__text = array(
 	'tel' => 'Tel.',
 	'fax' => 'Fax.'
@@ -197,6 +197,6 @@ $slug = 'Lorem ipsum Nulla ea nulla enim eiusmod anim magna laborum.';
         MM                   MM   
         MM                   MM   
 */
-$p404__text = 'Cette page n\'est malheureusement pas disponible.';
-$p404__back = 'Retour à la page précédente';
-$p404__home = 'Page d\'accueil';
+$p404__text = 'Too bad. This page doesn\'t exist anymore.';
+$p404__back = 'Back to the previous page';
+$p404__home = 'Homepage';

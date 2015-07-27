@@ -4,13 +4,6 @@ var customData = {},
 //hDispo = $(window).height(),
 //lDispo = $(window).width(),
 customFunctions = function () {
-/*
-	Basic texts in various languages...
-*/
-	var trads = {
-		"fr":	{
-		}
-	},
 
 /*
 	Faux parallax
@@ -110,8 +103,6 @@ customFunctions = function () {
 
 // Public elements :
 	return {
-		finishDesign: finishDesign,
-		enhanceBehaviour: enhanceBehaviour,
 //		fakeParallax: fakeParallax,
 		unMask: unMask,
 		jQueryPlugins: {
@@ -122,13 +113,7 @@ customFunctions = function () {
 	};
 }();
 
-$(document).ready(function () {
-//	$("body").queryLoader2();
-	customFunctions.enhanceBehaviour();
-});
-
 $(window).load(function () {
-	customFunctions.finishDesign();
 	customFunctions.jQueryPlugins.initPrettyPhoto();
 //	customFunctions.jQueryPlugins.initCycle();
 //	customFunctions.jQueryPlugins.initMFP();

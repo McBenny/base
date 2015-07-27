@@ -38,6 +38,7 @@
  * 		- Interactivity			FIND_INTERACTIVITY
  * 			.Enlarge click		FIND_ENLARGECLICK
  * 			.Scroll to elt 		FIND_SCROLLTO
+ * 			.Ghost bar appears	FIND_GHOST
  * 		- Replacements			FIND_REPLACE
  * 			.Insert iFrame		FIND_IFRAME
  * 			.Insert Flash		FIND_FLASH
@@ -296,6 +297,38 @@ var _functions = function() {
 
 
 
+//	FIND_GHOST
+		/*
+			 dP""b8 88  88  dP"Yb  .dP"Y8 888888 88""Yb    db    88""Yb 
+			dP   `" 88  88 dP   Yb `Ybo."   88   88__dP   dPYb   88__dP 
+			Yb  "88 888888 Yb   dP o.`Y8b   88   88""Yb  dP__Yb  88"Yb  
+			 YboodP 88  88  YbodP  8bodP'   88   88oodP dP""""Yb 88  Yb 
+		*/
+/**
+ * @description 	Handling a "ghost" bar appearance/disappearance
+ * @param  {string} theBar a jQuery selector to the bar
+ * @return {boolean}
+ */
+	ghostStart = $(window).height(),
+	ghostBarHeight = 75,
+	ghostBar = function (theBar) {
+		var $bar = $(theBar),
+			scrollTop = $(window).scrollTop();
+		if (scrollTop > ghostStart) {
+// Show the Bar
+			$bar.slideDown("slow", function () {
+				return true;
+			});
+		} else {
+// Hide the Bar
+			$bar.slideUp("slow", function () {
+				return true;
+			});
+		}
+	},
+
+
+
 
 
 //	FIND_REPLACE
@@ -435,8 +468,8 @@ var _functions = function() {
 			pattern = /^http:\/\/www\.([^\/]+)\/(.*?)(\.(html|htm|php|asp))?$/,
 			humanDetected = false,
 			human = function () {};
-		subjectClass = typeof subjectClass != "undefined" ? subjectClass : "subject";
-		mailtoClassNames = typeof mailtoClassNames != "undefined" ? mailtoClassNames : ["courriel"];
+		subjectClass = subjectClass !== undefined ? subjectClass : "subject";
+		mailtoClassNames = mailtoClassNames !== undefined ? mailtoClassNames : ["courriel"];
 		for (i; i < mailtoClassNames.length; i++) {
 			selectorString += separator + "a." + mailtoClassNames[i];
 			separator = ", ";
@@ -459,7 +492,7 @@ var _functions = function() {
 		if (!humanDetected) {
 			$(document).mousemove(human).keypress(human);
 		}
-		if (touchDevice) {
+		if (_base.vars.touch) {
 			human();
 			humanDetected = true;
 		}
@@ -488,10 +521,18 @@ var _functions = function() {
 		*/
 	return {
 		handleBasicBehaviours: handleBasicBehaviours,
+		ghostBar: ghostBar
 //		sizesEgalizer: sizesEgalizer,
 //		enlargeClick: enlargeClick,
 //		scrollToElt: scrollToElt,
+//		ghostBar: ghostBar,
 //		contentReplacement: contentReplacement,
 //		emailBuilder: emailBuilder
 	};
 }();
+
+if (_functions.ghostBar !== undefined) {
+	$(window).scroll(function () {
+		_functions.ghostBar(".ghostBar");
+	});
+}

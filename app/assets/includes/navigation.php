@@ -13,3 +13,7 @@ foreach ($navigation__texts AS $key => $value) {
 				</li>
 			</ul>
 		</nav>
+
+<div class="ghostBar">
+	The ghost Nav !
+</div>

@@ -60,6 +60,7 @@
 */
 /*
 	This function finishes design
+	var "design" is a generic brick to insert into the dom to obtain additional elements only required to achieve design effects.
 */
 var finishDesign = function () {
 	var design = "<span class=\"design\" />";

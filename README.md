@@ -55,7 +55,7 @@ A full bunch of other scripts is provided:
 	* an advanced *Get-Url vars* function,
 	* an *image preloader*,
 	* *trim functions*.
-* **functions.js** stores more advanced functions that could be handy:
+* **[functions.js](/app/scripts/functionals/base.js)** stores more advanced functions that could be handy:
 	* pop-up, print, close, history, favorites handler,
 	* a *size-egalizer* for rows and columns,
 	* a *click-enlarger* to react on a full area as on the small link contained,
@@ -68,7 +68,7 @@ A full bunch of other scripts is provided:
 
 
 ###Styling - CSS/Sass
-**inuit.css** is embeded in its last version (not *inuitcss*).  
+**[inuit.css](https://github.com/csswizardry/inuit.css)** is embeded in its last version (not *inuitcss*).  
 This framewok provides a handfull of handy classes and styles that do just the minimum to set up the design: no colors, no sizes, no "visible styles", just grids, responsive tools, layout classes etc.  
 In addition to **inuit.css**, many style files are provided to organize your styling:
 

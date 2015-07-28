@@ -1,4 +1,10 @@
 #New project Installation
+You're just a few steps away from having a full ready-to-use project directory. The installation process consists of:
+
+1. Creating a new repository,
+1. Installing the *Bower components*,
+3. Installing *Brunch*,
+4. Setting up your server.
 
 ##Create a new repository
 1. Go on [http://gitlab.fullsix.com](http://gitlab.fullsix.com) and create a **new Git repository**.
@@ -20,9 +26,9 @@ bower install
 
 If you need other bower components, first, search for the right name of the component you need then install it:
 ```bash
-bower search moderni    // will find Modernizr packages for example
-bowe rinstall [component-name] --save-dev    // will install it
-bower init    // will upadate the bower.json file with your additional components (useful for the next installation).
+bower search moderni						// will find *Modernizr* packages for example
+bower install [component-name] --save-dev	// will install the desired package
+bower init									// will update the bower.json file with your additional components (useful for the next installation).
 ```
 
 **Warning**  
@@ -55,21 +61,21 @@ npm install [package-name] --save
 
 The *--save* parameter will add the package to the *package.json* file in order to include it in the next global download.
 
-##Local server settings
+##Set up your local server
 When using your local http server, create a domain related to the project:
 
 1. Create a virtual host by editing `apache/conf/extra/httpd-vhosts.conf`:
-<pre>
-    &lt;VirtualHost *:80>
-         DocumentRoot "C:\wamp\www\the-project-directory\site-root-directory"
-         ServerName project-name.local.f6.fr
-    &lt;/VirtualHost>
-</pre>
+```apache_conf
+<VirtualHost *:80>
+     DocumentRoot "C:\wamp\www\the-project-directory\site-root-directory"
+     ServerName project-name.local.f6.fr
+</VirtualHost>
+```
 2. Ask your system to catch this domain by editing the `hosts` file (`c:\windows\system32\drivers\etc\`):
-<pre>
+```
     127.0.0.1 other-project.local.f6.fr
     127.0.0.1 project-name.local.f6.fr
-</pre>
+```
 
 ##File tree
 **Brunch** uses a default file tree as follows:

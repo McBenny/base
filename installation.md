@@ -73,8 +73,8 @@ When using your local http server, create a domain related to the project:
 ```
 2. Ask your system to catch this domain by editing the `hosts` file (`c:\windows\system32\drivers\etc\`):
 ```
-    127.0.0.1 other-project.local.f6.fr
-    127.0.0.1 project-name.local.f6.fr
+127.0.0.1 other-project.local.f6.fr
+127.0.0.1 project-name.local.f6.fr
 ```
 
 ##File tree

@@ -26,7 +26,7 @@
 	                                                                                                                                                                     
  */
 /**
- * 		This file overrides InuitCSS default values.
+ * 		This file overrides Inuit.css default values.
  * 		Please copy here the ./inuit.css/_default.scss with all its sections but
  * 		only retain the values you wish to override
  */
@@ -77,6 +77,7 @@
 /**
  * Base font-family.
  */
+$base-font-family: 'Roboto', sans-serif;
 
 /**
  * Default colour for objects’ borders etc.

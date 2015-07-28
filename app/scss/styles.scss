@@ -72,7 +72,7 @@
 @import "functionals/vars";							// Custom variables useful to the site
 @import "functionals/functions";					// Some useful functions to manipulate further Sass code
 @import "functionals/mixins";						// Some useful mixins to enlarge inuit's scope
-@import "functionals/helpers";						// Some useful generic classes, silent or not andsome rewriting of inuit classes
+@import "functionals/helpers";						// Some useful generic classes, silent or not and some rewriting of inuit classes
 @import "functionals/dev";							// Some useful classes for development only, not to be pushed on production site!!!
 
 
@@ -111,8 +111,9 @@
 			88""   Yb   dP 88 Y88   88   o.`Y8b 
 			88      YbodP  88  Y8   88   8bodP' 
 		 */
-@import "http://fonts.googleapis.com/css?family=Montserrat:700";
-													// Montserrat bold is a free alternative to Gotham Black (http://www.identifont.com/similar?9YC)
+@import "http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900";
+													// Roboto is a neo-grotesque sans-serif typeface family developed by Google as the system font for its Android operating system.
+													// Usage: font-family: 'Roboto', sans-serif;
 
 
 

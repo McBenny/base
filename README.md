@@ -12,9 +12,7 @@ This project includes:
 ##Developing tools
 The project is being powered by:
 
-* **nodejs**,
-* **Bower**,
-* **NPM**,
+* **nodejs**, **Bower**, **NPM**,
 * and then ***Brunch***.
 
 ##What's really inside?
@@ -64,8 +62,7 @@ A full bunch of other scripts is provided:
 	* everything to *insert an iframe or a flash* doc,
 	* a *mailto encoder/decoder*.
 
-######All those scripts can be activated on demand but be a little careful, some depends on others (especially on *base* and *helpers*).
-
+######All those scripts can be activated on demand but be a little careful, some depends on others (especially in *base* and *helpers*).
 
 ###Styling - CSS/Sass
 **[inuit.css](https://github.com/csswizardry/inuit.css)** is embeded in its last version (not *inuitcss*).  
@@ -86,3 +83,20 @@ In addition to **inuit.css**, many [style files](/app/scss/) are provided to org
 * *Social networks* and *plugins* related styles.
 
 ######All these files are here as a guide, everything can be overriden, upscaled, changed, etc.
+
+##How to use it?
+Ok, I'm convinced, I want to use your thingy, what shall I do now?
+
+###Installation
+[RTFM](https://en.wikipedia.org/wiki/RTFM "Wikipedia knows.")! => [Manual](installation.md).
+
+###Configuration
+There are several configuration files to set up and drive a new project, have a look at who they are, where they are and how to customize them.
+
+* [Configure your project](configuration.md)
+
+###Usage
+Once you have installed the full project, all ou need to do is launch **Brunch**, and work!
+```
+brunch watch --server
+```

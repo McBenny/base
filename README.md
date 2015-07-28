@@ -22,10 +22,10 @@ The project is being powered by:
 ###Templating - HTML
 There are only two pages included:
 
-* the homepage,
-* a 404 page.
+* the [homepage](/app/assets/index.php),
+* a [404 page](/app/assets/404.php).
 
-But there are plenty of includes available:
+But there are plenty of [includes](/app/assets/includes/) available:
 
 * `<HEAD>` section with:
 	* *Stylesheets* imports,
@@ -44,18 +44,18 @@ But there are plenty of includes available:
 **jQuery** is embeded in its latest 1.x version.  
 A full bunch of other scripts is provided:
 
-* **base.js**:
+* **[base.js](/app/scripts/functionals/base.js)**:
 	* contains a console handler (if it lacks in the browser),
 	* some generic variables,
 	* a translations object, to store common used words in different languages.
-* **helpers.js** contains some useful small functions that you will use elsewhere:
+* **[helpers.js](/app/scripts/functionals/helpers.js)** contains some useful small functions that you will use elsewhere:
 	* a *findData* function,
 	* an *hourGlass manager*,
 	* a *touch device detector*,
 	* an advanced *Get-Url vars* function,
 	* an *image preloader*,
 	* *trim functions*.
-* **[functions.js](/app/scripts/functionals/base.js)** stores more advanced functions that could be handy:
+* **[functions.js](/app/scripts/functionals/functions.js)** stores more advanced functions that could be handy:
 	* pop-up, print, close, history, favorites handler,
 	* a *size-egalizer* for rows and columns,
 	* a *click-enlarger* to react on a full area as on the small link contained,
@@ -70,9 +70,9 @@ A full bunch of other scripts is provided:
 ###Styling - CSS/Sass
 **[inuit.css](https://github.com/csswizardry/inuit.css)** is embeded in its last version (not *inuitcss*).  
 This framewok provides a handfull of handy classes and styles that do just the minimum to set up the design: no colors, no sizes, no "visible styles", just grids, responsive tools, layout classes etc.  
-In addition to **inuit.css**, many style files are provided to organize your styling:
+In addition to **inuit.css**, many [style files](/app/scss/) are provided to organize your styling:
 
-* Some functional files:
+* Some [functional](/app/scss/functionals/) files:
 	* for variables,
 	* for overriding *inuit.css*,
 	* some helpers,

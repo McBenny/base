@@ -8,27 +8,22 @@
 ##Install Bower components
 ###Install Bower
 If **Bower** is not yet installed on your system, install it with the command line:
-
-* `npm install bower -g`
+```
+npm install bower -g
+```
 
 ###Install Bower components
 The minimum requirements here are jQuery and inuit.css, they are listed in the `bower.json`file. To install them, go to the root of the project with the command line and type:
-
-* `bower install`
+```
+bower install
+```
 
 If you need other bower components, first, search for the right name of the component you need then install it:
-
 ```bash
-bower search moderni    //will find Modernizr packages for example
+bower search moderni    // will find Modernizr packages for example
 bowe rinstall [component-name] --save-dev    // will install it
 bower init    // will upadate the bower.json file with your additional components (useful for the next installation).
 ```
-
-
-
-* `bower search moderni` will find Modernizr packages for example.
-* `bower install [component-name] --save-dev` will install it .
-* `bower init` will update the **bower.json** file with your additional components (useful for the next installation).
 
 **Warning**  
 A check is needed into the inuit.css component: It appears that to date, a missing property in the .bower.json causes problems in Brunch actions. To correct it:
@@ -38,8 +33,9 @@ A check is needed into the inuit.css component: It appears that to date, a missi
 
 ##Install the required Node modules
 This project uses **[Brunch](http://brunch.io)** and some of its sub-packages to function properly. To install them, go into the command line, and in the root of the project type:
-
-* `npm install`.
+```
+npm install
+```
 
 This command will take the **[package.json](package.json)** file that lists all the modules required and download them with all their dependencies. The included packages are:
 
@@ -53,8 +49,9 @@ This command will take the **[package.json](package.json)** file that lists all 
 
 ###Add more Node modules
 Feel free to install any other Node module that you think you need:
-
-* `npm install [package-name] --save`
+```
+npm install [package-name] --save
+```
 
 The *--save* parameter will add the package to the *package.json* file in order to include it in the next global download.
 

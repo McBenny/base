@@ -25,7 +25,7 @@ bower install
 ```
 
 If you need other bower components, first, search for the right name of the component you need then install it:
-```bash
+```
 bower search moderni						// will find *Modernizr* packages for example
 bower install [component-name] --save-dev	// will install the desired package
 bower init									// will update the bower.json file with your additional components (useful for the next installation).

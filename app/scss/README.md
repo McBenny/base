@@ -79,7 +79,7 @@ Most of those modifiers come with their opposite, or as a sequence of terms. Cho
 ```
 - **Infos**:
 ```
---info --warning --danger 
+--info --warning --danger
 --success --error
 --neutral --special
 --full
@@ -113,7 +113,7 @@ Put the selector on a line, with its opening curly brace, then put each declarat
 No order is required by CSS in the declarations but don't be messy. Choose an logical order and stick to it! The two main orders are:
 
 * **Alphabetical**: no question on where to put a declaration relatively to the others, easy to find.
-* **Box-model order**: this requires a bit of training but with in a small amount of time you will find the declarations as fast as in the alphabetical order but you will gain a real logic in your declarations:
+* **Box-model order**: as fast as in the alphabetical order but you will gain a real logic in your declarations:
 	1. Display related declarations:
 		1. Display,
 		2. Visibility,
@@ -139,3 +139,5 @@ No order is required by CSS in the declarations but don't be messy. Choose an lo
 	5. Others:
 		1. Cursor,
 		2. Content
+
+This requires a bit of training but with in a small amount of time you will find the declarations even faster.

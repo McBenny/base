@@ -80,8 +80,8 @@ __title
 ####Modifiers list
 Don't forget that the modifier doesn't replace the element, it comes over the element:
 
-* :-1:: `block__element--modifier`
-* :+1:: `block__element block__element--modifier`
+* :x:: `block__element--modifier`
+* :white_check_mark:: `block__element block__element--modifier`
 
 Most of those modifiers come with their opposite, or as a sequence of terms. Choose the terms that suit you the best.
 
@@ -124,11 +124,11 @@ The important thing is to always remember that the naming should reflect the fun
 **Sass** introduces nesting in CSS and thats fabulous. But it can also be a drawback: browsers tend to take a long time to parse a long CSS selector. The shorter, the faster.
 
 Try to avoid nesting over 3 levels. You don't have to reproduce the whole DOM tree to get to an element. In the following selectors, the second is probably enough and way much faster:
-* :-1::
+* :x::
 ```css
 .element > .element__item.element__item--modified > span > a.element__link--last {}
 ```
-* :+1::
+* :white_check_mark::
 ```
 .element .element__item--modified .element__link--last {}
 ```

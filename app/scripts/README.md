@@ -78,4 +78,4 @@ You can lint a file as many times as you want but you should at least lint it be
 ###JSLint
 **[JSLint](http://jslint.com/)** is an online tool similar to ESLint. There is an NPM package for it but as far as I know, it is a bit too intrusive as a package: you must integrate some JSLint code into your files to check them and it can block compilation if it's not happy with what he finds.
 
-Use it online. Don't forget to tick some checkboxes at the bottom or you'll end up with a bunch of errors no matter how you wrote your code ;-).
+Use it online. Don't forget to tick some checkboxes at the bottom or you'll end up with a bunch of errors no matter how you wrote your code :smiley:.

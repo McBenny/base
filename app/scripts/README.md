@@ -48,6 +48,7 @@ var myFunction = function () {
 };
 myFunction();
 ```
+
 	* :white_check_mark::
 ```javascript
 (function () {

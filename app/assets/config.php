@@ -33,15 +33,168 @@
 			  88   dP""""Yb 88oodP 88ood8 888888      YbodP  88          YboodP  YbodP  88  Y8   88   888888 88  Y8   88   
 		 */
 /**
- * 		- CSS					FIND_CSS
- * 		- Javascripts 			FIND_JS
- * 		- Others 				FIND_OTHER
- * 			.analytics 			FIND_GA
+ * 		- General				FIND_GENERAL
+ * 			.languages			FIND_LANGUAGES
+ * 			.Emails				FIND_EMAILS
+ * 			.Facebook			FIND_FACEBOOK
+ * 			.analytics			FIND_GA
  * 			.navigation URLs	FIND_NAV
+ * 		- CSS					FIND_CSS
+ * 		- Javascripts			FIND_JS
  * 		- Development			FIND_DEV
  * 			.variables			FIND_DEV_VARS
  * 			
  */
+
+
+
+
+
+//	FIND_GENERAL
+/*
+	  /$$$$$$                                                   /$$
+	 /$$__  $$                                                 | $$
+	| $$  \__/  /$$$$$$  /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$ | $$
+	| $$ /$$$$ /$$__  $$| $$__  $$ /$$__  $$ /$$__  $$|____  $$| $$
+	| $$|_  $$| $$$$$$$$| $$  \ $$| $$$$$$$$| $$  \__/ /$$$$$$$| $$
+	| $$  \ $$| $$_____/| $$  | $$| $$_____/| $$      /$$__  $$| $$
+	|  $$$$$$/|  $$$$$$$| $$  | $$|  $$$$$$$| $$     |  $$$$$$$| $$
+	 \______/  \_______/|__/  |__/ \_______/|__/      \_______/|__/
+	                                                               
+	                                                               
+	                                                               
+*/
+error_reporting(0);
+
+//	FIND_VARS
+		/*
+			Yb    dP    db    88""Yb 88    db    88""Yb 88     888888 .dP"Y8 
+			 Yb  dP    dPYb   88__dP 88   dPYb   88__dP 88     88__   `Ybo." 
+			  YbdP    dP__Yb  88"Yb  88  dP__Yb  88""Yb 88  .o 88""   o.`Y8b 
+			   YP    dP""""Yb 88  Yb 88 dP""""Yb 88oodP 88ood8 888888 8bodP' 
+		*/
+$varSite = array(
+ 	'salt' => 'B+)RgLVUf\@>N/t,4;H.V+cK',
+	'robots' => 'index, follow'
+);
+//	FIND_LANGUAGES
+		/*
+			88        db    88b 88  dP""b8 88   88    db     dP""b8 888888 .dP"Y8 
+			88       dPYb   88Yb88 dP   `" 88   88   dPYb   dP   `" 88__   `Ybo." 
+			88  .o  dP__Yb  88 Y88 Yb  "88 Y8   8P  dP__Yb  Yb  "88 88""   o.`Y8b 
+			88ood8 dP""""Yb 88  Y8  YboodP `YbodP' dP""""Yb  YboodP 888888 8bodP' 
+		*/
+$languages = array(
+	'default' => 'en',
+	'active' => 'en',
+	'list' => array(
+		'ar',
+		'cn',
+		'de',
+		'en',
+		'es',
+		'fr',
+		'it',
+		'ja',
+		'nl',
+		'pt',
+		'ru'
+	)
+);
+
+
+
+//	FIND_EMAILS
+		/*
+			888888 8b    d8    db    88 88     .dP"Y8 
+			88__   88b  d88   dPYb   88 88     `Ybo." 
+			88""   88YbdP88  dP__Yb  88 88  .o o.`Y8b 
+			888888 88 YY 88 dP""""Yb 88 88ood8 8bodP' 
+		*/
+$emails = array(
+	'ar' => array(
+		'contact' => 'contact@domain.ar'
+	),
+	'cn' => array(
+		'contact' => 'contact@domain.cn'
+	),
+	'de' => array(
+		'contact' => 'contact@domain.de'
+	),
+	'en' => array(
+		'contact' => 'contact@domain.com'
+	),
+	'es' => array(
+		'contact' => 'contact@domain.es'
+	),
+	'fr' => array(
+		'contact' => 'contact@domain.fr'
+	),
+	'it' => array(
+		'contact' => 'contact@domain.it'
+	),
+	'ja' => array(
+		'contact' => 'contact@domain.ja'
+	),
+	'nl' => array(
+		'contact' => 'contact@domain.nl'
+	),
+	'pt' => array(
+		'contact' => 'contact@domain.pt'
+	),
+	'ru' => array(
+		'contact' => 'contact@domain.ru'
+	)
+);
+
+
+
+//	FIND_FACEBOOK
+		/*
+			888888    db     dP""b8 888888 88""Yb  dP"Yb   dP"Yb  88  dP 
+			88__     dPYb   dP   `" 88__   88__dP dP   Yb dP   Yb 88odP  
+			88""    dP__Yb  Yb      88""   88""Yb Yb   dP Yb   dP 88"Yb  
+			88     dP""""Yb  YboodP 888888 88oodP  YbodP   YbodP  88  Yb 
+		*/
+$facebook = array(
+	'appId' => '130680013681440',
+	'title' => 'The title',
+	'type' => '',
+	'url' => '',
+	'img' => '',
+	'siteName' => 'Name of the site',
+	'admin' => '123456'
+);
+
+
+
+//	FIND_GA
+		/*
+			 dP""b8  dP"Yb   dP"Yb   dP""b8 88     888888             db    88b 88    db    88     Yb  dP 888888 88  dP""b8 .dP"Y8 
+			dP   `" dP   Yb dP   Yb dP   `" 88     88__   ________   dPYb   88Yb88   dPYb   88      YbdP    88   88 dP   `" `Ybo." 
+			Yb  "88 Yb   dP Yb   dP Yb  "88 88  .o 88""   """"""""  dP__Yb  88 Y88  dP__Yb  88  .o   8P     88   88 Yb      o.`Y8b 
+			 YboodP  YbodP   YbodP   YboodP 88ood8 888888          dP""""Yb 88  Y8 dP""""Yb 88ood8  dP      88   88  YboodP 8bodP' 
+		*/
+$googleAnalytics = array(
+	'url' => '//www.google-analytics.com/analytics.js',
+	'ua' => 'UA-62153009-1'
+);
+
+
+
+//	FIND_NAV
+		/*
+			88b 88    db    Yb    dP 88  dP""b8    db    888888 88  dP"Yb  88b 88     88   88 88""Yb 88     .dP"Y8 
+			88Yb88   dPYb    Yb  dP  88 dP   `"   dPYb     88   88 dP   Yb 88Yb88     88   88 88__dP 88     `Ybo." 
+			88 Y88  dP__Yb    YbdP   88 Yb  "88  dP__Yb    88   88 Yb   dP 88 Y88     Y8   8P 88"Yb  88  .o o.`Y8b 
+			88  Y8 dP""""Yb    YP    88  YboodP dP""""Yb   88   88  YbodP  88  Y8     `YbodP' 88  Yb 88ood8 8bodP' 
+		*/
+$navigation__urls = array(
+	'products' => '#products',
+	'services' => '#services',
+	'contact' => '#contact'
+);
+$contact__mail = 'contact@domain.com';
 
 
 
@@ -118,56 +271,10 @@ $head__css__append = array();
  */
 $foot__js__prepend = array();
 $foot__js__list = array(
- 	$path.'/js/scripts/vendor.js',
- 	$path.'/js/main.js'
+	$path.'/js/scripts/vendor.js',
+	$path.'/js/main.js'
 );
 $foot__js__append = array();
-
-
-
-
-
-//	FIND_OTHERS
-/*
-	  /$$$$$$    /$$     /$$                                    
-	 /$$__  $$  | $$    | $$                                    
-	| $$  \ $$ /$$$$$$  | $$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$
-	| $$  | $$|_  $$_/  | $$__  $$ /$$__  $$ /$$__  $$ /$$_____/
-	| $$  | $$  | $$    | $$  \ $$| $$$$$$$$| $$  \__/|  $$$$$$ 
-	| $$  | $$  | $$ /$$| $$  | $$| $$_____/| $$       \____  $$
-	|  $$$$$$/  |  $$$$/| $$  | $$|  $$$$$$$| $$       /$$$$$$$/
-	 \______/    \___/  |__/  |__/ \_______/|__/      |_______/ 
-	                                                            
-	                                                            
-	                                                            
-*/
-//	FIND_GA
-		/*
-			 dP""b8  dP"Yb   dP"Yb   dP""b8 88     888888             db    88b 88    db    88     Yb  dP 888888 88  dP""b8 .dP"Y8 
-			dP   `" dP   Yb dP   Yb dP   `" 88     88__   ________   dPYb   88Yb88   dPYb   88      YbdP    88   88 dP   `" `Ybo." 
-			Yb  "88 Yb   dP Yb   dP Yb  "88 88  .o 88""   """"""""  dP__Yb  88 Y88  dP__Yb  88  .o   8P     88   88 Yb      o.`Y8b 
-			 YboodP  YbodP   YbodP   YboodP 88ood8 888888          dP""""Yb 88  Y8 dP""""Yb 88ood8  dP      88   88  YboodP 8bodP' 
-		*/
-$googleAnalytics = array(
-	'url' => '//www.google-analytics.com/analytics.js',
-	'ua' => 'UA-62153009-1'
-);
-
-
-
-//	FIND_NAV
-		/*
-			88b 88    db    Yb    dP 88  dP""b8    db    888888 88  dP"Yb  88b 88     88   88 88""Yb 88     .dP"Y8 
-			88Yb88   dPYb    Yb  dP  88 dP   `"   dPYb     88   88 dP   Yb 88Yb88     88   88 88__dP 88     `Ybo." 
-			88 Y88  dP__Yb    YbdP   88 Yb  "88  dP__Yb    88   88 Yb   dP 88 Y88     Y8   8P 88"Yb  88  .o o.`Y8b 
-			88  Y8 dP""""Yb    YP    88  YboodP dP""""Yb   88   88  YbodP  88  Y8     `YbodP' 88  Yb 88ood8 8bodP' 
-		*/
-$navigation__urls = array(
-	'products' => '#products',
-	'services' => '#services',
-	'contact' => '#contact'
-);
-$contact__mail = 'contact@domain.com';
 
 
 
@@ -195,6 +302,8 @@ $contact__mail = 'contact@domain.com';
 			   YP    dP""""Yb 88  Yb 88 dP""""Yb 88oodP 88ood8 888888 8bodP' 
 		*/
 $devvars = array(
+ 	'dev' => false,
+ 	'log' => '',
 	'pageList' => array(
 		array(
 			'name' => 'Home page',
@@ -210,3 +319,11 @@ $devvars = array(
 		)
 	)
 );
+
+/**
+ * If in dev mode, different settings:
+ */
+if ($devvars['dev'] === true) {
+	error_reporting(E_ALL);
+	$varSite['robots'] = 'noindex, nofollow';
+}

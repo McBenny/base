@@ -1,3 +1,6 @@
+/**
+ * Configuration file for ESLint
+ */
 {
 	"env": {
 		"browser": true,

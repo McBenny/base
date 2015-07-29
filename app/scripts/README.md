@@ -32,8 +32,8 @@ The preferred notation for javascript is `camelCase`.
 
 Vatriable names often describe an element that is related to another: the list of items, the number of items, the link of the item, etc. To inform the reader on the relation between these variables, use a prefix, or a suffix and type in camelCases, it reduces the length of the names (compared to dashes or underscores):
 
-* could be better: `items-list, number_of_items, linkitem`
-* good: `itemsList, itemsNumber, itemLink`
+* :ok_hand:: `items-list, number_of_items, linkitem`
+* :+1:: `itemsList, itemsNumber, itemLink`
 
 At least, be consistent, pick a method and stick to it!
 
@@ -41,25 +41,25 @@ At least, be consistent, pick a method and stick to it!
 The first command is: "**Don't harm!**"  
 
 * **Don't be global**: try not to set global variables unless necessary. If your code doesn't need to be accessed at any time, encapsulate it:
-	* bad:
+	* :-1::
 ```
 var myFunction = function () {
 	...
 };
 myFunction();
 ```
-	* good:
+	* :+1::
 ```
 (function () {
 	...
 })();
 ```
 * Optimize **vars declarations**: try to declare all your variables in the same place (usually at the beginning of the function, at least at the beginning of each scope). And don't forget to declare functions:
-	* bad:heart:: `function myFunction () {...}`
-	* good:broken_heart:: `var myFunction = function () {...}`
+	* :1:: `function myFunction () {...}`
+	* :+1:: `var myFunction = function () {...}`
 * Don't compare to strings when you can **compare to nature**:  
-	* bad: `if (typeof neverDeclared == "undefined") {...}`
-	* good: `if (neverDeclared === undefined) {...}`
+	* :-1:: `if (typeof neverDeclared == "undefined") {...}`
+	* :+1:: `if (neverDeclared === undefined) {...}`
 * **Don't leave `console` calls** after developping. If it's important, leave them but comment them! A simple trick not to forget a `console` call: type them at the beginning of the lines, not within the incrementation, this way you'll see them much more faster.
 * **Say what you do**: there is no such deception as finding vars like: *var1*, *myVar*, etc. but use meaningful terms: *listItems*, *nbItems*, etc.
 * **Comment your code**: Of course you know what you're doing, no need to comment that smart function. But maybe in three monthes, after the holidays, you will not be that aware of what's happening in that function so, always comment: what is it for?, what it needs?, what it returns?

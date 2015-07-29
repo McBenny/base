@@ -1,4 +1,5 @@
 #New project Installation
+
 You're just a few steps away from having a full ready-to-use project directory. The installation process consists of:
 
 1. Creating a new repository,

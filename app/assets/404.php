@@ -1,15 +1,19 @@
 <?php
 $path = '..';
-require($path.'/lng-fr/_translations.php');
+$dev = isset($_GET['dev']) && $_GET['dev'] == 1 ? true : false;
+
+require($path.'/config.php');
+
+require($path.'/lng-'.$languages['active'].'/translations.php');
 
 include ($path.'/includes/head__html.php');
 
 $head__title = '404';
+
 include ($path.'/includes/head__head.php');
 ?>
 
 <body id="top">
-	<?php include ($path.'/includes/entete.php'); ?>
 
 	<div class="grid grid--center p404">
 		<header><h1 class="article__title">404</h1></header>
@@ -23,8 +27,6 @@ include ($path.'/includes/head__head.php');
 			</ul>
 		</div>
 	</div>
-
-	<?php include ($path.'/includes/pied.php'); ?>
 
 	<?php include ($path.'/includes/foot__javascripts.php'); ?>
 </body>

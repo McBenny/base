@@ -4,7 +4,10 @@ $dev = isset($_GET['dev']) && $_GET['dev'] == 1 ? true : false;
 
 require($path.'/config.php');
 
-require($path.'/lng-fr/translations.php');
+include_once($path.'/lng-'.$languages['default'].'/translations.php');
+if ($languages['default'] != $languages['active']) {
+	include_once($path.'/lng-'.$languages['active'].'/translations.php');
+}
 
 include ($path.'/includes/head__html.php');
 
@@ -15,6 +18,7 @@ $head__style = '
 		.inactive {color: #999; text-decoration: none; cursor: default;}
 ';
 */
+
 include ($path.'/includes/head__head.php');
 
 /*
@@ -30,7 +34,7 @@ $foot__js__append = array(
 <body id="top">
 <?php 
 if ($dev) {
-	include ($path.'/includes/-test-table-of-content.php');
+	include ($path.'/includes/_table-of-content.php');
 }
 ?>
 

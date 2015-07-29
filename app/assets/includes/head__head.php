@@ -3,6 +3,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,IE=8" />
 	<title><?php echo $head__title; ?></title>
 
+	<meta name="robots" content="<?php echo $varSite['robots']; ?>" />
 	<meta name="keywords" content="<?php echo $head__meta__keywords; ?>" />
 	<meta name="description" content="<?php echo $head__meta__description; ?>" />
 	<meta name="format-detection" content="telephone=no" />

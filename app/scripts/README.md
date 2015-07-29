@@ -47,9 +47,9 @@ var myFunction = function () {
 	...
 };
 myFunction();
-```javascript
-	* :white_check_mark::
 ```
+	* :white_check_mark::
+```javascript
 (function () {
 	...
 })();

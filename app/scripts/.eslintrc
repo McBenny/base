@@ -1,0 +1,16 @@
+{
+	"env": {
+		"browser": true,
+		"jquery": true
+	},
+	"globals": {
+		"_base": true,
+		"_helpers": true,
+		"_functions": true
+	},
+	"rules": {
+		"no-trailing-spaces": false,
+		"no-unused-vars": [2, {"vars": "local", "args": "all"}],
+		"no-underscore-dangle": false
+	}
+}

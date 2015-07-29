@@ -1,4 +1,26 @@
-#Sass and CSS Best Practices
+#About Styles
+
+**[Inuit.css](https://github.com/csswizardry/inuit.css)** is embeded in its last version (not *inuitcss*).  
+This framewok provides a handfull of handy classes and styles that do just the minimum to set up the design: no colors, no sizes, no "visible styles", just grids, responsive tools, layout classes etc.  
+In addition to **inuit.css**, many [style files](/app/scss/) are provided to organize your styling:
+
+* Some [functional](/app/scss/functionals/) files:
+	* for variables,
+	* for overriding *inuit.css*,
+	* some helpers,
+	* some handy functions,
+	* a few mixins.
+* *Basic* styles,
+* *Structure* styles,
+* *header* and *footer* styles,
+* Styles for *navigation*, *pagination*, *search*,
+* *Titles* and *forms* styles,
+* *Social networks* and *plugins* related styles.
+
+######All these files are here as a guide, everything can be overriden, upscaled, changed, etc.
+
+##Sass and CSS Best Practices
+To see how to use all the files provided here, have a look at the [configuration help file](/configuration.md##Styles).
 
 ##Notation
 The preferred notation for classes is **BEM**.
@@ -35,6 +57,7 @@ navigation
 teaser
 widget
 article
+...
 ```
 
 ####Elements
@@ -52,6 +75,7 @@ __lede
 __summary
 __data
 __title
+...
 ```
 ####Modifiers list
 Don't forget that the modifier doesn't replace the element, it comes over the element:
@@ -91,6 +115,7 @@ Most of those modifiers come with their opposite, or as a sequence of terms. Cho
 --n / --ne / --e / --se / --s / sw / --w / --nw
 --short / --long
 --simple / --complex
+...
 ```
 
 The important thing is to always remember that the naming should reflect the functional aspect of the content or its relation to the context rather than its appearance. Thus, avoid terms such as `text--red` or `block--right` and prefer terms like `message--warning` or `article--secondary`.
@@ -117,10 +142,9 @@ No order is required by CSS in the declarations but don't be messy. Choose an lo
 	1. Display related declarations:
 		1. Display,
 		2. Visibility,
-		3. Clearing,
-		4. Floating.
+		3. Clearing and floating.
 	2. Position related declarations:
-		1. Position,
+		1. Position type,
 		2. Coordinates,
 		3. Stacking.
 	3. Outside the element:
@@ -131,13 +155,14 @@ No order is required by CSS in the declarations but don't be messy. Choose an lo
 	4. Inside the element:
 		1. Background,
 		2. Padding,
-		3. Text related:
+		3. Content
+		4. Text related:
 			1. Text-wide declarations,
 			2. Line-wide related,
 			3. Letter-wide related,
 			4. Font-related
 	5. Others:
 		1. Cursor,
-		2. Content
+		2. Transformations and transitions
 
 This requires a bit of training but with in a small amount of time you will find the declarations even faster.

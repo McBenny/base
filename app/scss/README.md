@@ -129,7 +129,7 @@ Try to avoid nesting over 3 levels. You don't have to reproduce the whole DOM tr
 .element > .element__item.element__item--modified > span > a.element__link--last {}
 ```
 * :white_check_mark::
-```
+```css
 .element .element__item--modified .element__link--last {}
 ```
 Always try to represent what will be the length of the selector, don't nest everything to map the DOM, be selective.

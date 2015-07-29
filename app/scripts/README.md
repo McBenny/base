@@ -42,12 +42,12 @@ The first command is: "**Don't harm!**"
 
 * **Don't be global**: try not to set global variables unless necessary. If your code doesn't need to be accessed at any time, encapsulate it:
 	* :x::
-```
+```javascript
 var myFunction = function () {
 	...
 };
 myFunction();
-```
+```javascript
 	* :white_check_mark::
 ```
 (function () {

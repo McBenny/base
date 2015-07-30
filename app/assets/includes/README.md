@@ -1,12 +1,21 @@
 #A little bit of help...
+About:
+
+* Socials ([Facebook](#Facebook), [Twitter](#Twitter), [Instagram](#Instagram)),
+* Medias (audio, video),
 
 ##Socials
 
 ###Facebook
-The facebook API changes often so if this help is out of date, please be forgiving.
+The facebook API changes often so if this help file is out of date, please be forgiving, and update it!
+
+To implement one of these services, allways insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
+
+The **appId** must be inserted into `/app/assets/config.php#$facebook`.  
+It is given by Facebook to registred developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
 
 ####Like button
-The Like button is the quickest way for people to share content with their friends.  
+The **Like button** is the quickest way for people to share content with their friends.  
 A single click on the Like button will 'like' pieces of content on the web and share them on Facebook.  
 You can also display a Share button next to the Like button to let people add a personal message and customize who they share with.
 
@@ -55,7 +64,7 @@ $fbLocalData = array(
 
 
 ####Share button
-The Share button lets people add a personalized message to links before sharing on their timeline, in groups, or to their friends via a Facebook Message.
+The **Share button** lets people add a personalized message to links before sharing on their timeline, in groups, or to their friends via a Facebook Message.
 
 | Parameter 	| Values                                                           	| Description                                                                	|
 |-----------	|------------------------------------------------------------------	|----------------------------------------------------------------------------	|
@@ -91,7 +100,7 @@ $fbLocalData = array(
 ```
 
 ####Comments block
-The Comments plugin lets people comment on content on your site using their Facebook account.  
+The **Comments plugin** lets people comment on content on your site using their Facebook account.  
 If people wish to they can share this activity to their friends and friends of friends in News Feed as well.  
 It also contains built-in moderation tools and special social relevance ranking.
 

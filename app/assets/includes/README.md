@@ -17,11 +17,12 @@ The facebook API changes often so if this help is out of date, please be forgivi
 | share     	| **false**, true                                                  	| Shall it also display a share button.                                                                                                          	|
 | color     	| **light**, dark                                                  	| The general theme of the display. "Dark" reads better on dark backgrounds.                                                                     	|
 
-examples:  
-1. Default parameters:  
+examples:
+
+* Default parameters:  
 ![](/_documents/readme-components/socials__facebook--like-btn--1.png)
 
-2. Customized 1:  
+* Customized 1:  
 ![](/_documents/readme-components/socials__facebook--like-btn--2.png)
 ```
 $fbLocalData = array(
@@ -34,7 +35,7 @@ $fbLocalData = array(
 	'share' => 'true'
 );
 ```
-3. Customized 2:  
+* Customized 2:  
 ![](/_documents/readme-components/socials__facebook--like-btn--3.png)
 ```
 $fbLocalData = array(

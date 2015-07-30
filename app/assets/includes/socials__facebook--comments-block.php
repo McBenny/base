@@ -24,7 +24,7 @@
  */
 
 // Parameters to be moved into the calling page
-$fbLocalData = array(
+/*$fbLocalData = array(
 	'url' => 'http://www.yahoo.fr',
 	'numberPosts' => 1, 			//				5
 	'count' => true,				//				FALSE	displays the total count of comments
@@ -33,6 +33,7 @@ $fbLocalData = array(
 	'font' => 'tahoma',				//				LUCIDA GRANDE | arial | segoe ui | tahoma | trebuchet ms | verdana
 	'color' => 'light'				//				LIGHT / dark
 );
+*/
 
 if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !empty($facebook['title'])) {
 	$fbData = array(

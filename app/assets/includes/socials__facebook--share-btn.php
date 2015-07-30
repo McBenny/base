@@ -22,12 +22,13 @@
  */
 
 // Parameters to be moved into the calling page
-$fbLocalData = array(
+/*$fbLocalData = array(
 	'url' => 'http://www.yahoo.fr',
 	'layout' => 'icon_link',		//				ICON_LINK | icon | link | button | button_count | box_count
 	'font' => 'tahoma',				//				LUCIDA GRANDE | arial | segoe ui | tahoma | trebuchet ms | verdana
 	'color' => 'light'				//				LIGHT / dark
 );
+*/
 
 if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !empty($facebook['title'])) {
 	$fbData = array(

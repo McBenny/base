@@ -95,6 +95,16 @@ The Comments plugin lets people comment on content on your site using their Face
 If people wish to they can share this activity to their friends and friends of friends in News Feed as well.  
 It also contains built-in moderation tools and special social relevance ranking.
 
+| Parameter   	| Values                                                           	| Description                                                                	|
+|-------------	|------------------------------------------------------------------	|----------------------------------------------------------------------------	|
+| url         	| **the current URL if left empty**, any URL                       	| The URL that will be shared.                                               	|
+| numberPosts 	| **5**, any number                                                	| The number of posts to display.                                            	|
+| count       	| **true**, false                                                  	| Display the number of comments (outside the main block).                   	|
+| order       	| **social**, time, reverse_time                                   	| The order of display of the comments.                                      	|
+| width       	| **550**, any number                                              	| The width of the block. Warning, content may overflow.                     	|
+| font        	| **lucida grande**, arial, segoeui, tahoma, trebuchet ms, verdana 	| The font used for text.                                                    	|
+| color       	| **light**, dark                                                  	| The general theme of the display. "Dark" reads better on dark backgrounds. 	|
+
 Examples:
 
 * Default parameters:  

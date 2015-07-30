@@ -20,7 +20,7 @@
  */
 
 // Parameters to be moved into the calling page
-$fbLocalData = array(
+/*$fbLocalData = array(
 	'action' => 'like',				//				LIKE | recommend
 	'url' => 'http://www.yahoo.fr',	//	
 	'layout' => 'standard',			//				STANDARD | button | button_count | box_count
@@ -32,8 +32,7 @@ $fbLocalData = array(
 	'share' => 'false',				//				false
 	'color' => 'light'				//				LIGHT / dark
 );
-
-
+*/
 
 if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !empty($facebook['title'])) {
 	$fbData = array(

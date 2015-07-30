@@ -17,6 +17,35 @@ The facebook API changes often so if this help is out of date, please be forgivi
 | share     	| **false**, true                                                  	| Shall it also display a share button.                                                                                                          	|
 | color     	| **light**, dark                                                  	| The general theme of the display. "Dark" reads better on dark backgrounds.                                                                     	|
 
+examples:
+![](/_documents/readme-components/socials__facebook--like-btn.png)
+1. Default parameters
+2. Customized 1:
+```
+$fbLocalData = array(
+	'action' => 'recommend',
+	'url' => 'http://www.yahoo.fr',
+	'layout' => 'standard',
+	'width' => 150,
+	'faces' => 'true',
+	'font' => 'segoe ui',
+	'share' => 'true'
+);
+```
+3. Customized 2:
+```
+$fbLocalData = array(
+	'action' => 'recommend',
+	'url' => 'http://www.yahoo.fr',
+	'layout' => 'button_count',
+	'faces' => 'true',
+	'font' => 'segoe ui',
+	'share' => 'true',
+	'color' => 'dark'
+);
+```
+
+
 ####Share button
 
 ####Comments block

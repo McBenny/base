@@ -1,7 +1,7 @@
 #A little bit of help...
 About:
 
-* Socials ([Facebook](#Facebook), [Twitter](#Twitter), [Instagram](#Instagram)),
+* Socials ([Facebook](#facebook), [Twitter](#twitter), [Instagram](#instagram)),
 * Medias (audio, video),
 
 ##Socials

@@ -91,6 +91,40 @@ $fbLocalData = array(
 ```
 
 ####Comments block
+The Comments plugin lets people comment on content on your site using their Facebook account.  
+If people wish to they can share this activity to their friends and friends of friends in News Feed as well.  
+It also contains built-in moderation tools and special social relevance ranking.
+
+Examples:
+
+* Default parameters:  
+![](/_documents/readme-components/socials__facebook--comments-block--1.png)
+
+* Customized 1:  
+![](/_documents/readme-components/socials__facebook--comments-block--2.png)
+```
+$fbLocalData = array(
+	'url' => 'http://www.yahoo.fr',
+	'numberPosts' => 2,
+	'count' => true,
+	'order' => 'time',
+	'width' => 300,
+	'font' => 'tahoma',
+	'color' => 'light'
+);
+```
+* Customized 2:  
+![](/_documents/readme-components/socials__facebook--comments-block--3.png)
+```
+$fbLocalData = array(
+	'url' => 'http://www.yahoo.fr',
+	'numberPosts' => 2,
+	'count' => false,
+	'width' => 470,
+	'font' => 'arial',
+	'color' => 'dark'
+);
+```
 
 ###Twitter
 

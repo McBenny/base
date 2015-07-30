@@ -1,8 +1,48 @@
 #A little bit of help...
 About:
 
-* Socials ([Facebook](#facebook), [Twitter](#twitter), [Instagram](#instagram)),
 * Medias (audio, video),
+* Socials ([Facebook](#facebook), [Twitter](#twitter), [Instagram](#instagram)),
+
+##Medias
+
+###Audio
+How to implement that brand new `<audio>` tag? It's pretty straight forward with the provided include...
+
+| Parameter  	| Values                                                 	| Description                                                                                                                                                        	|
+|------------	|--------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| controls   	| **false**, true                                        	| Wether or not to show the control bar...                                                                                                                           	|
+| autoplay   	| **false**, true                                        	| Wether the sound must start as soon as possible or wait for the user demand.                                                                                       	|
+| preload    	| **false**, true                                        	| If autoplay is off, does the browser shall load the media?                                                                                                         	|
+| loop       	| **false**, true                                        	| Shall the browser loop the sound as it ends?                                                                                                                       	|
+| alt        	| **Default text** set in the translation file, any text 	| If set, the given text (or blank text) will display as an alternate text. If not set, defaults to `/app/assets/lng-LANGUAGE/translations.php#$audio__unsupported`. 	|
+| src['mp3'] 	| any MP3 source                                         	| If supported, the file that will be played                                                                                                                         	|
+| src['ogg'] 	| any OGG source                                         	| If supported, the file that will be played                                                                                                                         	|
+| src['wav'] 	| any WAV source                                         	| If supported, the file that will be played                                                                                                                         	|
+
+###Video
+How to implement that brand new `<video>` tag? It's pretty straight forward with the provided include...
+
+This tag is not supported by every browser and every browser does not support the same video formats so: this include allows you to specify different video sources and a Flash alternative.
+
+Also keep in mind that each browser has its own way to implement that tag so some may behave differently (autoplay, poster, etc.)
+
+| Parameter        	| Values                                                 	| Description                                                                                                                                                        	|
+|------------------	|--------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| width            	|                                                        	|                                                                                                                                                                    	|
+| height           	|                                                        	|                                                                                                                                                                    	|
+| controls         	| **false**, true                                        	| Wether or not to show the control bar...                                                                                                                           	|
+| autoplay         	| **false**, true                                        	| Wether the video must start as soon as possible or wait for the user demand.                                                                                       	|
+| preload          	| **false**, true                                        	| If autoplay is off, does the browser shall load the video?                                                                                                         	|
+| loop             	| **false**, true                                        	| Shall the browser loop the video as it ends?                                                                                                                       	|
+| mute             	| **false**, true                                        	| Shall the sound be muted?                                                                                                                                          	|
+| poster           	| **empty**, any path to an image                        	| The path to the image that is shown before playing the video.                                                                                                      	|
+| alt              	| **Default text** set in the translation file, any text 	| If set, the given text (or blank text) will display as an alternate text. If not set, defaults to `/app/assets/lng-LANGUAGE/translations.php#$audio__unsupported`. 	|
+| src['mp4']       	| any MP4 source                                         	| If supported, the file that will be played                                                                                                                         	|
+| src['ogg']       	| any OGG source                                         	| If supported, the file that will be played                                                                                                                         	|
+| src['webm']      	| any WEBM source                                        	| If supported, the file that will be played                                                                                                                         	|
+| playerswf        	| any path to a SWF video player                         	| If the browser doesn't support HTML5 video, il will try to fallback on a Flash video player. The MP4 video source will be played then.                             	|
+| playerBackground 	| **transparent**, any hexadecimal color code            	|                                                                                                                                                                    	|
 
 ##Socials
 
@@ -13,6 +53,12 @@ To implement one of these services, allways insert the `socials__facebook--manda
 
 The **appId** must be inserted into `/app/assets/config.php#$facebook`.  
 It is given by Facebook to registred developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
+
+The Facebook services available:
+
+* [Like button](#like),
+* [Share button](#share),
+* [Comments block](#comments)
 
 ####Like button
 The **Like button** is the quickest way for people to share content with their friends.  

@@ -9,34 +9,36 @@
 	Wav	-		3.5+	10.5+	-		3+
 */
 // Parameters to be moved into the calling page
-$paramsAudio = array(
+/*$audioLocalData = array(
 	'controls' => true,
 	'autoplay' => false,
-	'loop' => false,
 	'preload' => false,
+	'loop' => false,
 	'src' => array(
 				'mp3' => 'img/tmp/song.mp3',
-				'ogg' => 'img/tmp/song.ogg'
+				'ogg' => 'img/tmp/song.ogg',
+				'wav' => 'img/tmp/song.wav'
 			),
-	'alt' => $audio__unsupported
+	'alt' => ''
 );
+*/
+$audioData = array(
+	'controls' => isset($audioLocalData['controls']) && $audioLocalData['controls'] ? ' controls="controls"' : null,
+	'autoplay' => isset($audioLocalData['autoplay']) && $audioLocalData['autoplay'] ? ' autoplay="autoplay"' : null,
+	'preload' => isset($audioLocalData['preload']) && $audioLocalData['preload'] ? ' preload="preload"' : null,
+	'loop' => isset($audioLocalData['loop']) && $audioLocalData['loop'] ? ' loop="loop"' : null,
+	'src' => '',
+	'alt' => isset($audioLocalData['alt']) ? $audioLocalData['alt'] : $audio__unsupported
+);
+$audioData['src'] .= isset($audioLocalData['src']['mp3']) && is_file($audioLocalData['src']['mp3']) ? "\t<source src=\"".$audioLocalData['src']['mp3']."\" type=\"audio/mpeg\"></source>\n" : null;
+$audioData['src'] .= isset($audioLocalData['src']['ogg']) && is_file($audioLocalData['src']['ogg']) ? "\t<source src=\"".$audioLocalData['src']['ogg']."\" type=\"audio/ogg\"></source>\n" : null;
+$audioData['src'] .= isset($audioLocalData['src']['wav']) && is_file($audioLocalData['src']['wav']) ? "\t<source src=\"".$audioLocalData['src']['wav']."\" type=\"audio/x-wav\"></source>\n" : null;
 
-$audioControls = isset($paramsAudio['controls']) && $paramsAudio['controls'] ? ' controls="controls"' : null;
-$audioAutostart = isset($paramsAudio['autoplay']) && $paramsAudio['autoplay'] ? ' autoplay="autoplay"' : null;
-$audioPreload = isset($paramsAudio['preload']) && $paramsAudio['preload'] ? ' preload="preload"' : null;
-$audioLoop = isset($paramsAudio['loop']) && $paramsAudio['loop'] ? ' loop="loop"' : null;
-$audioSRC = '';
-$audioSRC .= isset($paramsAudio['src']['mp3']) && is_file($paramsAudio['src']['mp3']) ? "\t<source src=\"".$paramsAudio["src"]["mp3"]."\" type=\"audio/mpeg\"></source>\n" : null;
-$audioSRC .= isset($paramsAudio['src']['ogg']) && is_file($paramsAudio['src']['ogg']) ? "\t<source src=\"".$paramsAudio["src"]["ogg"]."\" type=\"audio/ogg\"></source>\n" : null;
-$audioSRC .= isset($paramsAudio['src']['wav']) && is_file($paramsAudio['src']['wav']) ? "\t<source src=\"".$paramsAudio["src"]["wav"]."\" type=\"audio/x-wav\"></source>\n" : null;
-$audioAlt = isset($paramsAudio['alt']) && $paramsAudio['alt'] != '' ? $paramsAudio['alt'] : null;
-
-if ($audioSRC) {
+if ($audioData['src'] != '') {
 ?>
-<audio <?php echo $audioControls.$audioAutostart.$audioPreload.$audioLoop; ?>>
-<?php echo $audioSRC; ?>
-	<?php echo $audioAlt; ?>
-
+<audio<?php echo $audioData['controls'].$audioData['autoplay'].$audioData['preload'].$audioData['loop']; ?>>
+<?php echo $audioData['src']; ?>
+	<?php echo $audioData['alt']; ?>
 </audio>
 <?php
 }

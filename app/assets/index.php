@@ -39,7 +39,6 @@ if ($dev) {
 ?>
 
 <?php include('includes/navigation.php'); ?>
-<?php include('includes/media__video--html5.php'); ?>
 
 <h1>This is the homepage</h1>
 

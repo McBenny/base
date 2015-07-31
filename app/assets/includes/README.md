@@ -1,7 +1,7 @@
 #A little bit of help...
 About:
 
-* Medias (audio, video, Youtube),
+* Medias ([audio](#audio), [video](#video), [Youtube](#youtube)),
 * Socials ([Facebook](#facebook), [Twitter](#twitter), [Instagram](#instagram)),
 
 ##Medias

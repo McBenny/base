@@ -42,3 +42,4 @@ if ($audioData['src'] != '') {
 </audio>
 <?php
 }
+unset($audioLocalData, $audioData);

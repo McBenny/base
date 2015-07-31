@@ -92,3 +92,4 @@ if ($videoData['src'] != '') {
 </video>
 <?php
 }
+unset($videoLocalData, $videoData);

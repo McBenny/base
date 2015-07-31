@@ -3,7 +3,7 @@ About:
 
 * Medias ([audio](#audio), [video](#video), [YouTube](#youtube)),
 * Socials ([Facebook](#facebook), [Twitter](#twitter), [Instagram](#instagram)),
-* Others ([Google Analytics](#google))
+* Others ([Google Analytics](#google-analytics))
 
 ##Medias
 

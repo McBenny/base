@@ -23,7 +23,7 @@
 	'playerBackground' => '#f00'
 );
 */
- 
+
 $videoData = array(
 	'width' => isset($videoLocalData['width']) && is_numeric($videoLocalData['width']) ? ' width="'.$videoLocalData['width'].'"' : null,
 	'height' => isset($videoLocalData['height']) && is_numeric($videoLocalData['height']) ? ' height="'.$videoLocalData['height'].'"' : null,

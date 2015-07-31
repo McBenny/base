@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is required by either like button, share button and comments block files.
- * If you intend to use one of these files, you MUST insert this one before, ideally jut after the body tag.
+ * If you intend to use one of these files, you MUST insert this one before, ideally just after the body tag.
  *
  * @source:	https://developers.facebook.com/docs/plugins/
  * @time:	20150729

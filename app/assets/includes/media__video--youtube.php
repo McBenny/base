@@ -1,6 +1,7 @@
 <?php
 /**
- * https://support.google.com/youtube/answer/171780
+ * api: https://developers.google.com/youtube/player_parameters
+ * iframe: https://support.google.com/youtube/answer/171780
  * 20150731
  */
 // Parameters to be moved into the calling page

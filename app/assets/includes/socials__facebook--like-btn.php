@@ -9,7 +9,7 @@
  * @time:	20150729
  *
  * Warning:
- * 		This include requires "socials__facebook--mandatory-tools.php" to be inserted BEFORE (best juit after the body tag)
+ * 		This include requires "socials__facebook--mandatory-tools.php" to be inserted BEFORE (best just after the body tag)
  */
 
 /**
@@ -49,3 +49,4 @@ if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !em
 <div class="fb-like" data-href="<?php echo $fbData['url']; ?>" data-layout="<?php echo $fbData['layout']; ?>"<?php echo $fbData['layoutDetails']; ?> data-action="<?php echo $fbData['action']; ?>" data-show-faces="<?php echo $fbData['faces']; ?>" data-share="<?php echo $fbData['share']; ?>" data-font="<?php echo $fbData['font']; ?>" data-colorscheme="<?php echo $fbData['color']; ?>"></div>
 <?php
 }
+unset($fbLocalData, $fbData);

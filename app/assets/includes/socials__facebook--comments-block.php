@@ -8,7 +8,7 @@
  * @time:	20150729
  *
  * Warning:
- * 		This include requires "socials__facebook--mandatory-tools.php" to be inserted BEFORE (best juit after the body tag)
+ * 		This include requires "socials__facebook--mandatory-tools.php" to be inserted BEFORE (best just after the body tag)
  */
 
 /**
@@ -54,3 +54,4 @@ if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !em
 <div class="fb-comments" data-href="<?php echo $fbData['url']; ?>" data-numposts="<?php echo $fbData['numberPosts']; ?>" data-order-by="<?php echo $fbData['order']; ?>" data-width="<?php echo $fbData['width']; ?>" data-font="<?php echo $fbData['font']; ?>" data-colorscheme="<?php echo $fbData['color']; ?>"></div>
 <?php
 }
+unset($fbLocalData, $fbData);

@@ -1,8 +1,9 @@
 #A little bit of help...
 About:
 
-* Medias ([audio](#audio), [video](#video), [Youtube](#youtube)),
+* Medias ([audio](#audio), [video](#video), [YouTube](#youtube)),
 * Socials ([Facebook](#facebook), [Twitter](#twitter), [Instagram](#instagram)),
+* Others ([Google Analytics](#google))
 
 ##Medias
 
@@ -68,7 +69,7 @@ The include provided let's you choose between the method you prefer, so just emb
 | autoplay   	| **false**, true      	| Wether the video must start as soon as possible or wait for the user demand.<br>Seems to be disabled in **iframe mode**                                                             	|
 | privacy    	| **true**, false      	| Is YouTube authorized to place cookies before the video is being played?<br>Available in **iframe mode** only                                                                       	|
 | fullscreen 	| **true**, false      	| Do you allow the user to put the video in fullscreen mode?                                                                                                                       	|
-| id         	| any Youtube video id 	| The unique id representing the video at YouTube                                                                                                                                  	|
+| id         	| any Youtube video id 	| **REQUIRED!!** The unique id representing the video at YouTube                                                                                                                   	|
 
 ##Socials
 
@@ -78,7 +79,7 @@ The facebook API changes often so if this help file is out of date, please be fo
 To implement one of these services, allways insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
 
 The **appId** must be inserted into `/app/assets/config.php#$facebook`.  
-It is given by Facebook to registred developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
+It is given by Facebook to registered developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
 
 The Facebook services available:
 
@@ -220,3 +221,16 @@ $fbLocalData = array(
 ###Twitter
 
 ###Instagram
+
+##Others
+
+###Google Analytics
+[Analytics.js](http://www.google.com/analytics) is a JavaScript library for measuring how users interact with your website.
+
+There are two mandatory parameters: the analytics' URL, and the UA (web site identification).  
+The **URL** and the **UA** must be inserted into `/app/assets/config.php#$googleAnalytics`.  
+The **UA** is given by Google to registered websites to identify themselves. Thus you shall register the website to Google Analytics to get it.
+
+| Parameter  	| Values                                                     	| Description                                               	|
+|------------	|------------------------------------------------------------	|-----------------------------------------------------------	|
+| complement 	| array of `array('name' => 'theName', value => 'theValue')` 	| insert an array for each key/value pair of data you need. 	|

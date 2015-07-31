@@ -60,12 +60,8 @@ The include provided let's you choose between the method you prefer, so just emb
 | Parameter  	| Values               	| Description                                                                                                                                                                      	|
 |------------	|----------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | mode       	| **api**, iframe      	| Choose your method of integration (async, sync)                                                                                                                                  	|
-| width      	| any number           	| The width of the embeded video.  
-**api mode**: no setting leads to initial width of the video or relative width if height is set up.  
-**iframe mode**: no setting leads to 200px   	|
-| height     	| any number           	| The height of the embeded video.  
-**api mode**: no setting leads to initial height of the video or relative height if width is set up.  
-**iframe mode**: no setting leads to 113px 	|
+| width      	| any number           	| The width of the embeded video. **api mode**: no setting leads to initial width of the video or relative width if height is set up. **iframe mode**: no setting leads to 200px   	|
+| height     	| any number           	| The height of the embeded video. **api mode**: no setting leads to initial height of the video or relative height if width is set up. **iframe mode**: no setting leads to 113px 	|
 | controls   	| **true**, false      	| Wether or not to show the controls of the video...                                                                                                                               	|
 | title      	| **true**, false      	| Is the title and sharing visible before playing the video?                                                                                                                       	|
 | suggested  	| **false**, true      	| Do you need related videos proposed at the end of the video?                                                                                                                     	|

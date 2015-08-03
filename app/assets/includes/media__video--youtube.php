@@ -78,5 +78,11 @@ function onYouTubePlayerAPIReady () {
 <iframe<?php echo $ytData['width'].$ytData['height']; ?> src="https://www.youtube<?php echo $ytData['privacy']; ?>.com/embed/<?php echo $ytData['id']; ?>?<?php echo $ytData['controls'].$ytData['autoplay'].$ytData['title'].$ytData['suggested']; ?>" frameborder="0"<?php echo $ytData['fullscreen']; ?>></iframe>
 <?php
 	}
+} else {
+	if ($devvars['dev']) {
+?>
+<script type="text/javascript">console.info('Parameters missing for Youtube video embedding: video id.');</script>
+<?php
+	}
 }
 unset($ytLocalData, $ytData);

@@ -91,5 +91,11 @@ if ($videoData['src'] != '') {
 ?>
 </video>
 <?php
+} else {
+	if ($devvars['dev']) {
+?>
+<script type="text/javascript">console.info('Parameters missing for video embedding: video source.');</script>
+<?php
+	}
 }
 unset($videoLocalData, $videoData);

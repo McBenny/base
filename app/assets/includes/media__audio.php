@@ -41,5 +41,11 @@ if ($audioData['src'] != '') {
 	<?php echo $audioData['alt']; ?>
 </audio>
 <?php
+} else {
+	if ($devvars['dev']) {
+?>
+<script type="text/javascript">console.info('Parameters missing for audio embedding: audio source.');</script>
+<?php
+	}
 }
 unset($audioLocalData, $audioData);

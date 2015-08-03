@@ -219,6 +219,38 @@ $fbLocalData = array(
 ```
 
 ###Twitter
+To implement one of these services, allways insert the `socials__twitter--mandatory-tools.php` into the top body of your page or it will never work. Most of the parameters are not mandatory. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page.
+
+The Twitter services available:
+
+* [Tweet button](#tweet),
+* [Follow button](#follow),
+* [Timeline](#timeline)
+
+####Tweet button
+The Tweet button is a small button displayed on your website to help viewers easily share your content on Twitter. No parameter is mandatory.
+
+####Follow button
+The Follow button is a small button displayed on your websites to help users easily follow a Twitter account.
+
+The only required parameter is the **screen-name**. Note that it's also used by the **Timeline**.  
+It must be inserted into `/app/assets/config.php#$twitter`.  
+It is Twitter the account name. Thus you shall just open an account at Twitter to get it (in the end it must be the client's account!).
+
+####Timeline
+Embedded timelines are an easy way to embed multiple Tweets on your website in a compact, single-column view.  
+Display the latest Tweets from a single Twitter account, multiple accounts, or tap into the worldwide conversation around a topic grouped in a search result.
+
+There are two required parameters for this service: the **screen-name** and a **widget-id**.
+
+Both must be inserted into `/app/assets/config.php#$twitter`. Note that the **screen-name** is also used by the **Follow button**.  
+The **screen-name** is Twitter the account name. Thus you shall just open an account at Twitter to get it (in the end it must be the client's account!).  
+The **widget-id** is generated online:
+
+* Connect to the Twitter account (yours or in the end the client's account),
+* Go to "[https://twitter.com/settings/widgets/new](https://twitter.com/settings/widgets/new)",
+* Click the *Create a widget* button,
+* Look into the source code provided under the presentation and copy the value of the "*data-widget-id*" attribute.
 
 ###Instagram
 

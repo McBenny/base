@@ -37,6 +37,7 @@
  * 			.languages			FIND_LANGUAGES
  * 			.Emails				FIND_EMAILS
  * 			.Facebook			FIND_FACEBOOK
+ * 			.Twitter			FIND_TWITTER
  * 			.analytics			FIND_GA
  * 			.navigation URLs	FIND_NAV
  * 		- CSS					FIND_CSS
@@ -164,6 +165,20 @@ $facebook = array(
 	'img' => '',
 	'siteName' => 'Name of the site',
 	'admin' => '123456'
+);
+
+
+
+//	FIND_TWITTER
+		/*
+			888888 Yb        dP 88 888888 888888 888888 88""Yb 
+			  88    Yb  db  dP  88   88     88   88__   88__dP 
+			  88     YbdPYbdP   88   88     88   88""   88"Yb  
+			  88      YP  YP    88   88     88   888888 88  Yb 
+		*/
+$twitter = array(
+	'screen-name' => 'McBennyDev',
+	'widget-id' => '628202967171264512'
 );
 
 

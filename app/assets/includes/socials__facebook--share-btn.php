@@ -13,7 +13,7 @@
  * Insert this block where you want to display the Facebook Like button.
  *
  * The following parameters must be deleted from this file and inserted into the calling page.
- * None of these parameters is mandatory as there are defaults values into the mechanic.
+ * None of these parameters is mandatory as there are default values into the mechanic.
  *
  * Warning:
  * 	The 'appId' parameter MUST be set somewhere:
@@ -40,5 +40,11 @@ if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !em
 ?>
 <div class="fb-share-button" data-href="<?php echo $fbData['url']; ?>" data-layout="<?php echo $fbData['layout']; ?>" data-font="<?php echo $fbData['font']; ?>" data-colorscheme="<?php echo $fbData['color']; ?>"></div>
 <?php
+} else {
+	if ($devvars['dev']) {
+?>
+<script type="text/javascript">console.info('Parameters missing for Facebook share button: appId and/or title.');</script>
+<?php
+	}
 }
 unset($fbLocalData, $fbData);

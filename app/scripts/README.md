@@ -1,6 +1,6 @@
 #About Javascript
 
-**[jQuery](http://jquery.com/)** is embeded in its latest 1.x version.  
+**[jQuery](http://jquery.com/)** is embedded in its latest 1.x version.  
 A full bunch of other scripts full handy stuff is provided:
 
 * **[base.js](/app/scripts/functionals/base.js)**:

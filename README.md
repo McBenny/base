@@ -39,13 +39,13 @@ But there are plenty of [includes](/app/assets/includes/) available:
 ######All these includes are plain HTML, enhanced with a bit of PHP, to handle the inclusions and to insert some text variables. They sometimes use *inuit.css* class names to get styled.
 
 ###Scripting - Javascript
-**jQuery** is embeded in its latest 1.x version.  
+**jQuery** is embedded in its latest 1.x version.  
 A full bunch of other scripts full handy stuff is provided.
 
 A linting utility, **ESLint**, is also included to help you cleanup your javascript code.
 
 ###Styling - CSS/Sass
-**[inuit.css](https://github.com/csswizardry/inuit.css)** is embeded in its last version (not *inuitcss*).  
+**[inuit.css](https://github.com/csswizardry/inuit.css)** is embedded in its last version (not *inuitcss*).  
 This framewok provides a handfull of handy classes and styles that do just the minimum to set up the design: no colors, no sizes, no "visible styles", just grids, responsive tools, layout classes etc.  
 In addition to **inuit.css**, many [style files](/app/scss/) are provided to organize your styling.
 

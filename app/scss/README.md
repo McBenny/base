@@ -1,6 +1,6 @@
 #About Styles
 
-**[Inuit.css](https://github.com/csswizardry/inuit.css)** is embeded in its last version (not *inuitcss*).  
+**[Inuit.css](https://github.com/csswizardry/inuit.css)** is embedded in its last version (not *inuitcss*).  
 This framewok provides a handfull of handy classes and styles that do just the minimum to set up the design: no colors, no sizes, no "visible styles", just grids, responsive tools, layout classes etc.  
 In addition to **inuit.css**, many [style files](/app/scss/) are provided to organize your styling:
 

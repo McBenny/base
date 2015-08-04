@@ -76,7 +76,7 @@ The include provided let's you choose between the method you prefer, so just emb
 ###Facebook
 The facebook API changes often so if this help file is out of date, please be forgiving, and update it!
 
-To implement one of these services, always insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
+To implement one of these services, allways insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
 
 The **appId** must be inserted into `/app/assets/config.php#$facebook`.  
 It is given by Facebook to registered developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
@@ -281,7 +281,7 @@ The **widget-id** is generated online:
 | height      | any number                              | Defaults to 600                                                                                             |
 | alignment   | **left**, center, right                 | Aligns the whole timeline. This only works when set from the online generator                               |
 | theme       | **light**, dark                         | Changes the background and colors of the timeline, for light or dark environments                           |
-| link-color  | any hexadecimal color code              | Defaults to #0084ba for light theme and #87c2ed for dark theme                                              |
+| link-color  | any hexadecimal color code              | Defaults to <span style="color:#0084ba">#0084ba</span> for light theme and <span style="color:#87c2ed">#87c2ed</span> for dark theme                                              |
 | cards       | **visible**, hidden                     | Showw or hide automatically embedded in pages in tweets. This only works when set from the online generator |
 | noheader    | **false**, true                         | Whether to hide the header of the timeline                                                                  |
 | nofooter    | **false**, true                         | Whether to hide the footer of the timeline                                                                  |

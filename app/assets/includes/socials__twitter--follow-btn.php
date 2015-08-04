@@ -17,7 +17,7 @@
  * 
  * Warning:
  * 	The 'screen-name' parameter MUST be set somewhere:
- * 		- /app/assets/config.php#$twitter['screen-name']				preferred
+ * 		- /app/assets/config.php#$socials['twitter']['screen-name']				preferred
  * 		- with your twitter local datas ($twLocalData['screen-name'])	last chance
  */
 
@@ -34,7 +34,7 @@
 */
 
 $twData = array(
-	'screen-name' => isset($twLocalData['screen-name']) ? $twLocalData['screen-name'] : (isset($twitter) && isset($twitter['screen-name']) ? $twitter['screen-name'] : null),
+	'screen-name' => isset($twLocalData['screen-name']) ? $twLocalData['screen-name'] : (isset($socials['twitter']) && isset($socials['twitter']['screen-name']) ? $socials['twitter']['screen-name'] : null),
 
 	'size' => isset($twLocalData['size']) && in_array($twLocalData['size'], array('large')) ? ' data-size="'.$twLocalData['size'].'"' : null,
 	'show-count' => isset($twLocalData['show-count']) && !$twLocalData['show-count'] ? ' data-show-count="false"' : null,

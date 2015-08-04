@@ -22,11 +22,11 @@
  * 			=> Go to: https://twitter.com/settings/widgets/new (being logged-in)
  * 			=> [Create a widget]
  * 		2) Get the widget id in the source displayed under the example presentation (it will also be present into the URL bar)
- * 		3) Insert it into /app/assets/config.php#$twitter['widget-id'] (preferred) or in the $twLocalData['widget-id'].
+ * 		3) Insert it into /app/assets/config.php#$socials['twitter']['widget-id'] (preferred) or in the $twLocalData['widget-id'].
  * 
  * Warning:
  * 	The 'screen-name' parameter MUST be set somewhere:
- * 		- /app/assets/config.php#$twitter['screen-name']				preferred
+ * 		- /app/assets/config.php#$socials['twitter']['screen-name']		preferred
  * 		- with your twitter local datas ($twLocalData['screen-name'])	last chance
  */
 
@@ -52,8 +52,8 @@ $twLocalData = array(
 );
 
 $twData = array(
-	'screen-name' => isset($twLocalData['screen-name']) ? $twLocalData['screen-name'] : (isset($twitter) && isset($twitter['screen-name']) ? $twitter['screen-name'] : null),
-	'widget-id' => isset($twLocalData['widget-id']) ? ' data-widget-id="'.$twLocalData['widget-id'].'"' : (isset($twitter) && isset($twitter['widget-id']) ? ' data-widget-id="'.$twLocalData['widget-id'].'"' : null),
+	'screen-name' => isset($twLocalData['screen-name']) ? $twLocalData['screen-name'] : (isset($socials['twitter']) && isset($socials['twitter']['screen-name']) ? $socials['twitter']['screen-name'] : null),
+	'widget-id' => isset($twLocalData['widget-id']) ? ' data-widget-id="'.$twLocalData['widget-id'].'"' : (isset($socials['twitter']) && isset($socials['twitter']['widget-id']) ? ' data-widget-id="'.$twLocalData['widget-id'].'"' : null),
 	'tweet-limit' => isset($twLocalData['tweet-limit']) ? ' data-tweet-limit="'.$twLocalData['tweet-limit'].'"' : null,
 
 	'width' => isset($twLocalData['width']) ? ' width="'.$twLocalData['width'].'"' : null,

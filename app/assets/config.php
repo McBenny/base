@@ -36,10 +36,12 @@
  * 		- General				FIND_GENERAL
  * 			.languages			FIND_LANGUAGES
  * 			.Emails				FIND_EMAILS
- * 			.Facebook			FIND_FACEBOOK
- * 			.Twitter			FIND_TWITTER
  * 			.analytics			FIND_GA
  * 			.navigation URLs	FIND_NAV
+ * 		- Socials				FIND_SOCIALS
+ * 			.Facebook			FIND_FACEBOOK
+ * 			.instagram			FIND_INSTAGRAM
+ * 			.Twitter			FIND_TWITTER
  * 		- CSS					FIND_CSS
  * 		- Javascripts			FIND_JS
  * 		- Development			FIND_DEV
@@ -150,39 +152,6 @@ $emails = array(
 
 
 
-//	FIND_FACEBOOK
-		/*
-			888888    db     dP""b8 888888 88""Yb  dP"Yb   dP"Yb  88  dP 
-			88__     dPYb   dP   `" 88__   88__dP dP   Yb dP   Yb 88odP  
-			88""    dP__Yb  Yb      88""   88""Yb Yb   dP Yb   dP 88"Yb  
-			88     dP""""Yb  YboodP 888888 88oodP  YbodP   YbodP  88  Yb 
-		*/
-$facebook = array(
-	'appId' => '130680013681440',
-	'title' => 'The title',
-	'type' => '',
-	'url' => '',
-	'img' => '',
-	'siteName' => 'Name of the site',
-	'admin' => '123456'
-);
-
-
-
-//	FIND_TWITTER
-		/*
-			888888 Yb        dP 88 888888 888888 888888 88""Yb 
-			  88    Yb  db  dP  88   88     88   88__   88__dP 
-			  88     YbdPYbdP   88   88     88   88""   88"Yb  
-			  88      YP  YP    88   88     88   888888 88  Yb 
-		*/
-$twitter = array(
-	'screen-name' => 'McBennyDev',
-	'widget-id' => '628202967171264512'
-);
-
-
-
 //	FIND_GA
 		/*
 			 dP""b8  dP"Yb   dP"Yb   dP""b8 88     888888             db    88b 88    db    88     Yb  dP 888888 88  dP""b8 .dP"Y8 
@@ -210,6 +179,70 @@ $navigation__urls = array(
 	'contact' => '#contact'
 );
 $contact__mail = 'contact@domain.com';
+
+
+
+
+
+//	FIND_SOCIALS
+/*
+	  /$$$$$$                      /$$           /$$          
+	 /$$__  $$                    |__/          | $$          
+	| $$  \__/  /$$$$$$   /$$$$$$$ /$$  /$$$$$$ | $$  /$$$$$$$
+	|  $$$$$$  /$$__  $$ /$$_____/| $$ |____  $$| $$ /$$_____/
+	 \____  $$| $$  \ $$| $$      | $$  /$$$$$$$| $$|  $$$$$$ 
+	 /$$  \ $$| $$  | $$| $$      | $$ /$$__  $$| $$ \____  $$
+	|  $$$$$$/|  $$$$$$/|  $$$$$$$| $$|  $$$$$$$| $$ /$$$$$$$/
+	 \______/  \______/  \_______/|__/ \_______/|__/|_______/ 
+	                                                          
+	                                                          
+	                                                          
+*/
+$socials = array(
+//	FIND_FACEBOOK
+		/*
+			888888    db     dP""b8 888888 88""Yb  dP"Yb   dP"Yb  88  dP 
+			88__     dPYb   dP   `" 88__   88__dP dP   Yb dP   Yb 88odP  
+			88""    dP__Yb  Yb      88""   88""Yb Yb   dP Yb   dP 88"Yb  
+			88     dP""""Yb  YboodP 888888 88oodP  YbodP   YbodP  88  Yb 
+		*/
+	'facebook' => array(
+		'appId' => '130680013681440',
+		'title' => 'The title',
+		'type' => '',
+		'url' => '',
+		'img' => '',
+		'siteName' => 'Name of the site',
+		'admin' => '123456'
+	),
+
+
+
+//	FIND_INSTAGRAM
+		/*
+			88 88b 88 .dP"Y8 888888    db     dP""b8 88""Yb    db    8b    d8 
+			88 88Yb88 `Ybo."   88     dPYb   dP   `" 88__dP   dPYb   88b  d88 
+			88 88 Y88 o.`Y8b   88    dP__Yb  Yb  "88 88"Yb   dP__Yb  88YbdP88 
+			88 88  Y8 8bodP'   88   dP""""Yb  YboodP 88  Yb dP""""Yb 88 YY 88 
+		*/
+	'instagram' => array(
+		'client_id' => '96b797d00ead490f8a471e7663ded25d'
+	),
+
+
+
+//	FIND_TWITTER
+		/*
+			888888 Yb        dP 88 888888 888888 888888 88""Yb 
+			  88    Yb  db  dP  88   88     88   88__   88__dP 
+			  88     YbdPYbdP   88   88     88   88""   88"Yb  
+			  88      YP  YP    88   88     88   888888 88  Yb 
+		*/
+	'twitter' => array(
+		'screen-name' => 'McBennyDev',
+		'widget-id' => '628202967171264512'
+	)
+);
 
 
 

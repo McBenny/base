@@ -17,7 +17,7 @@
  *
  * Warning:
  * 	The 'appId' parameter MUST be set somewhere:
- * 		- /app/assets/config.php#$facebook['appId']					preferred
+ * 		- /app/assets/config.php#$socials['facebook']['appId']		preferred
  * 		- with your facebook local datas ($fbLocalData['appId'])	last chance
  */
 
@@ -30,7 +30,7 @@
 );
 */
 
-if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !empty($facebook['title'])) {
+if (isset($socials['facebook']) && is_array($socials['facebook']) && !empty($socials['facebook']['appId']) && !empty($socials['facebook']['title'])) {
 	$fbData = array(
 		'url' => isset($fbLocalData['url']) ? $fbLocalData['url'] : "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
 		'layout' => isset($fbLocalData['layout']) ? $fbLocalData['layout'] : 'icon_link',

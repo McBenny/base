@@ -34,7 +34,7 @@
 );
 */
 
-if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !empty($facebook['title'])) {
+if (isset($socials['facebook']) && is_array($socials['facebook']) && !empty($socials['facebook']['appId']) && !empty($socials['facebook']['title'])) {
 	$fbData = array(
 		'action' => isset($fbLocalData['action']) ? $fbLocalData['action'] : 'like',
 		'url' => isset($fbLocalData['url']) ? $fbLocalData['url'] : "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",

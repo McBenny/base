@@ -78,7 +78,7 @@ The facebook API changes often so if this help file is out of date, please be fo
 
 To implement one of these services, allways insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
 
-The **appId** must be inserted into `/app/assets/config.php#$facebook`.  
+The **appId** must be inserted into `/app/assets/config.php#$socials['facebook']`.  
 It is given by Facebook to registered developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
 
 The Facebook services available:

@@ -14,10 +14,10 @@
  * 
  * Warning:
  * 	The 'appId' parameter MUST be set here:
- * 		- /app/assets/config.php#$facebook['appId']
+ * 		- /app/assets/config.php#$socials['facebook']['appId']
  */
 
-if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !empty($facebook['title'])) {
+if (isset($socials['facebook']) && is_array($socials['facebook']) && !empty($socials['facebook']['appId']) && !empty($socials['facebook']['title'])) {
 	switch ($languages['active']) {
 		case 'ar':
 			$locale = 'ar_AR';
@@ -67,12 +67,12 @@ if (isset($facebook) && is_array($facebook) && !empty($facebook['appId']) && !em
 	if (d.getElementById(id)) return;
 	js = d.createElement(s);
 	js.id = id;
-	js.src = "http://connect.facebook.net/<?php echo $locale; ?>/sdk.js#xfbml=1&version=v2.4&appId=<?php echo $facebook['appId']; ?>";
+	js.src = "http://connect.facebook.net/<?php echo $locale; ?>/sdk.js#xfbml=1&version=v2.4&appId=<?php echo $socials['facebook']['appId']; ?>";
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, "script", "facebook-jssdk"));
  */
 ?>
 <div id="fb-root"></div>
-<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="http://connect.facebook.net/<?php echo $locale; ?>/sdk.js#xfbml=1&version=v2.4&appId=<?php echo $facebook['appId']; ?>";fjs.parentNode.insertBefore(js,fjs);}(document,"script","facebook-jssdk"));</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="http://connect.facebook.net/<?php echo $locale; ?>/sdk.js#xfbml=1&version=v2.4&appId=<?php echo $socials['facebook']['appId']; ?>";fjs.parentNode.insertBefore(js,fjs);}(document,"script","facebook-jssdk"));</script>
 <?php
 }

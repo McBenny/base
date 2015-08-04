@@ -76,7 +76,7 @@ The include provided let's you choose between the method you prefer, so just emb
 ###Facebook
 The facebook API changes often so if this help file is out of date, please be forgiving, and update it!
 
-To implement one of these services, allways insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
+To implement one of these services, always insert the `socials__facebook--mandatory-tools.php` into the top body of your page or it will never work. Each service can work properly without any parameter but the **appId**. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page. The only things in common will be the **appId** and the **language** but that shouldn't be a problem.
 
 The **appId** must be inserted into `/app/assets/config.php#$facebook`.  
 It is given by Facebook to registered developpers to identify their app. Thus you shall register as a developper to Facebook, and then [declare your app](https://developers.facebook.com/apps) to get the key.
@@ -219,7 +219,7 @@ $fbLocalData = array(
 ```
 
 ###Twitter
-To implement one of these services, allways insert the `socials__twitter--mandatory-tools.php` into the top body of your page or it will never work. Most of the parameters are not mandatory. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page.
+To implement one of these services, always insert the `socials__twitter--mandatory-tools.php` into the top body of your page or it will never work. Most of the parameters are not mandatory. Only one *mandatory-tools* insertion is required per page no matter how much services you insert afterwards. Each service can have its own parameters even in the same page.
 
 The Twitter services available:
 
@@ -228,7 +228,19 @@ The Twitter services available:
 * [Timeline](#timeline)
 
 ####Tweet button
-The Tweet button is a small button displayed on your website to help viewers easily share your content on Twitter. No parameter is mandatory.
+The Tweet button is a small button displayed on your website to help viewers easily share your content on Twitter. No parameter is mandatory. But the following parameters are available:
+
+| Parameter | Values                                  | Description                                                                                |
+|-----------|-----------------------------------------|--------------------------------------------------------------------------------------------|
+| text      | any text to prefill the tweet           | Defaults to the title of the current page                                                  |
+| url       | any URL                                 | Defaults to the current URL of the page                                                    |
+| hashtags  | any list of terms                       | These terms, comma separated will be treated as individual hashtags, don't put the # signs |
+| via       | any Twitter screen-name                 | The screen name will be treated as a dynamic Twitter account (clickable and referred)      |
+| size      | large                                   | Use this to enlarge the initial button (20px => 28px in height)                            |
+| alignment | **left**, right                         | This makes the button float in the set direction                                           |
+| count     | **NULL**, left, vertical                | Leaving empty displays the number of tweets, "none" hides the counter, "vertical" puts it on top of the button |
+| lang      | **en**, any valid language short string | Localises the display                                                                      |
+| dnt       | **false**, true                         |                                                                                            |
 
 ####Follow button
 The Follow button is a small button displayed on your websites to help users easily follow a Twitter account.
@@ -236,6 +248,15 @@ The Follow button is a small button displayed on your websites to help users eas
 The only required parameter is the **screen-name**. Note that it's also used by the **Timeline**.  
 It must be inserted into `/app/assets/config.php#$twitter`.  
 It is Twitter the account name. Thus you shall just open an account at Twitter to get it (in the end it must be the client's account!).
+
+| Parameter        | Values                                  | Description                                                                                                    |
+|------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| screen-name      | any Twitter screen-name                 | **REQUIRED!!** Indicates the Twitter account to follow.                                                        |
+| size             | large                                   | Use this to enlarge the initial button (20px => 28px in height)                                                |
+| show-count       | **NULL**, left, vertical                | Leaving empty displays the number of tweets, "none" hides the counter, "vertical" puts it on top of the button |
+| show-screen-name | **true**, false                         | Whether to display the screen-name or not                                                                      |
+| lang             | **en**, any valid language short string | Localises the display                                                                                          |
+| dnt              | **false**, true                         | Disables the "Do Not Track" mode                                                                               |
 
 ####Timeline
 Embedded timelines are an easy way to embed multiple Tweets on your website in a compact, single-column view.  
@@ -251,6 +272,24 @@ The **widget-id** is generated online:
 * Go to "[https://twitter.com/settings/widgets/new](https://twitter.com/settings/widgets/new)",
 * Click the *Create a widget* button,
 * Look into the source code provided under the presentation and copy the value of the "*data-widget-id*" attribute.
+
+| Parameter   | Values                                  | Description                                                                                                 |
+|-------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| screen-name | any Twitter screen-name                 | **REQUIRED!!** Indicates the Twitter account to follow                                                      |
+| widget-id   | the widget id generated online          | **REQUIRED!!** Go online to generate this id                                                                |
+| width       | any number                              | Defaults to 520, shall be between 250 and 550px                                                             |
+| height      | any number                              | Defaults to 600                                                                                             |
+| alignment   | **left**, center, right                 | Aligns the whole timeline. This only works when set from the online generator                               |
+| theme       | **light**, dark                         | Changes the background and colors of the timeline, for light or dark environments                           |
+| link-color  | any hexadecimal color code              | Defaults to #0084ba for light theme and #87c2ed for dark theme                                              |
+| cards       | **visible**, hidden                     | Showw or hide automatically embedded in pages in tweets. This only works when set from the online generator |
+| noheader    | **false**, true                         | Whether to hide the header of the timeline                                                                  |
+| nofooter    | **false**, true                         | Whether to hide the footer of the timeline                                                                  |
+| noborders   | **false**, true                         | Whether to hide the borders of the timeline                                                                 |
+| noscrollbar | **false**, true                         | Whether to hide the vertical scrollbar of the timeline. Doesn't deactivates the scroll anyway               |
+| transparent | **false**, true                         |                                                                                                             |
+| lang        | **en**, any valid language short string | Localises the display                                                                                       |
+| dnt         | **false**, true                         | Disables the "Do Not Track" mode                                                                            |
 
 ###Instagram
 

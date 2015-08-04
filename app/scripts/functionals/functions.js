@@ -173,10 +173,10 @@ var _functions = function() {
  *  	a) myH : will receive the maximum height of the elements,
  *  	b) myW : will receive the maximum width of the elements
  *  2)	In case no direction or Height (default option) is passed as parameter :
- *  	a) Allways keep the biggest height amongst elements to egalize contained in the container,
+ *  	a) Always keep the biggest height amongst elements to egalize contained in the container,
  *  	b) Affects the maximum height found to all the elements of the container
  *  3)	In case a direction other than "h" has been passed as a parameter :
- *  	a) Allways keep the biggest width amongst elements to egalize contained in the container,
+ *  	a) Always keep the biggest width amongst elements to egalize contained in the container,
  *  	b) Affects the maximum width found to all the elements of the container
  */
 	sizesEgalizer = function (myCtnr, myBlocks, dir) {

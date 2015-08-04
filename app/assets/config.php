@@ -226,7 +226,8 @@ $socials = array(
 			88 88  Y8 8bodP'   88   dP""""Yb  YboodP 88  Yb dP""""Yb 88 YY 88 
 		*/
 	'instagram' => array(
-		'client_id' => '96b797d00ead490f8a471e7663ded25d'
+		'client_id' => '96b797d00ead490f8a471e7663ded25d',
+		'tagname' => 'airfrance'
 	),
 
 

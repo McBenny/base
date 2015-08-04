@@ -77,5 +77,6 @@ if ($dev) {
 
 <?php include ($path.'/includes/foot__javascripts.php'); ?>
 
+<?php include('includes/socials__instagram--mandatory-tools.php'); ?>
 </body>
 </html>

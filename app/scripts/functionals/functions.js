@@ -43,6 +43,7 @@
  * 			.Insert iFrame		FIND_IFRAME
  * 			.Insert Flash		FIND_FLASH
  * 			.Encode mailto 		FIND_MAILTO
+ * 		- Instagram				FIND_INSTAGRAM
  * 		- Public return 		FIND_PUBLIC
  * 		
  */
@@ -512,6 +513,67 @@ var _functions = function() {
 
 
 
+//	FIND_INSTAGRAM
+		/*
+			88 88b 88 .dP"Y8 888888    db     dP""b8 88""Yb    db    8b    d8 
+			88 88Yb88 `Ybo."   88     dPYb   dP   `" 88__dP   dPYb   88b  d88 
+			88 88 Y88 o.`Y8b   88    dP__Yb  Yb  "88 88"Yb   dP__Yb  88YbdP88 
+			88 88  Y8 8bodP'   88   dP""""Yb  YboodP 88  Yb dP""""Yb 88 YY 88 
+		*/
+	instagramManagement = function () {
+/* 1 */	var ctnr = $('.instagram').find('.listeElts'),
+			liTPL = '<li class="grid__item listeElts__item" title="##TITLE##"><span class="icon icon--comment"></span><div class="item__data"><figure class="item__illustration"><img src="##URL##" alt="##ALT##" class="illustration__image" /></figure><p class="item__like"><span class="icon icon--like"></span>##LIKES## likes</p><p class="item__summary"><span class="icon icon--at"></span><strong>##USER##</strong> ##TEXT##</p></div></li>';
+
+/* 2 */	$.ajax({
+			type: 'GET',
+			dataType: 'jsonp',
+/*2.1*/		url: 'https://api.instagram.com/v1/tags/' + _base.vars.socials.instagram.tagname + '/media/recent?client_id=' + _base.vars.socials.instagram.client_id + '&count=20',
+			success: function (data) {
+console.log(data);
+				var myLis = '',
+				i = 0,
+				nbData = data.data.length,
+				myDatas = data.data,
+				myData,
+				myLikes,
+				myUser,
+				myText,
+				myImg,
+				myLi,
+/*2.2*/			displayData = function (datas) {
+					for (i; i < datas.length; i++) {
+	/* a */				myData = datas[i];
+	/* b */	//			if (myData.user !== null  && myData.user.username !== undefined && myData.user.username == _base.vars.instagram.username) {
+							myLikes = myData.likes.count;
+							myUser = myData.user !== null  && myData.user.username !== undefined? myData.user.username : 'UNKNOWN';
+							myText = myData.caption !== null && myData.caption.text !== undefined ? myData.caption.text : '';
+							myImg = myData.images.thumbnail.url;
+							myLi = liTPL;
+	/* c */					myLi = myLi.replace('##TITLE##', _base.vars.socials.instagram.tagname);
+							myLi = myLi.replace('##URL##', myImg);
+							myLi = myLi.replace('##ALT##', _base.vars.socials.instagram.tagname);
+							myLi = myLi.replace('##LIKES##', myLikes);
+							myLi = myLi.replace('##USER##', myUser);
+	/* d */						myText = myText.replace(new RegExp('(#' + _base.vars.socials.instagram.tagname + ')$', 'gi'), '<strong>#' + _base.vars.socials.instagram.tagname + '</strong> ');
+								myText = myText.replace(new RegExp('(#' + _base.vars.socials.instagram.username + ' )', 'gi'), '<strong>#' + _base.vars.socials.instagram.username + '</strong> ');
+							myLi = myLi.replace('##TEXT##', myText);
+	/* e */					myLis += myLi;
+			//			}
+					}
+	/* f */			ctnr.append(myLis);
+				};
+				displayData(myDatas);
+			},
+/* 8 */		error: function (data) {
+console.log("error");
+			}
+		});
+	};
+
+
+
+
+
 //	FIND_PUBLIC
 		/*
 			88""Yb 888888 888888 88   88 88""Yb 88b 88 
@@ -521,15 +583,17 @@ var _functions = function() {
 		*/
 	return {
 		handleBasicBehaviours: handleBasicBehaviours,
-		ghostBar: ghostBar
+		ghostBar: ghostBar,
 //		sizesEgalizer: sizesEgalizer,
 //		enlargeClick: enlargeClick,
 //		scrollToElt: scrollToElt,
 //		ghostBar: ghostBar,
 //		contentReplacement: contentReplacement,
 //		emailBuilder: emailBuilder
+		instagramManagement: instagramManagement
 	};
 }();
+_functions.instagramManagement();
 
 if (_functions.ghostBar !== undefined) {
 	$(window).scroll(function () {

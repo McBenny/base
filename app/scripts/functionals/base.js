@@ -119,7 +119,13 @@ var _base = function () {
 		html: $("html"),
 		customData: {},
 		pageLng: $("html").attr("lang") !== undefined && $("html").attr("lang") !== "" ? $("html").attr("lang") : "default",
-		touch: false
+		touch: false,
+		socials: {
+			instagram: {
+				client_id: '',
+				tagname: ''
+			}
+		}
 	},
 
 

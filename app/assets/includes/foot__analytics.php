@@ -35,7 +35,7 @@ if (isset($googleAnalytics) && isset($googleAnalytics['url']) && isset($googleAn
 		'ua' => $googleAnalytics['ua'],
 		'complement' => ''
 	);
-	if (count($gaLocalData['complement']) > 0) {
+	if (isset($gaLocalData) && isset($gaLocalData['complement']) && count($gaLocalData['complement']) > 0) {
 		$gaData['complement'] = '{';
 		foreach ($gaLocalData['complement'] as $key => $value) {
 			$gaData['complement'] .= $value['name'].': '.$value['value'].',';

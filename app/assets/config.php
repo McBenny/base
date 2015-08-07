@@ -227,7 +227,8 @@ $socials = array(
 		*/
 	'instagram' => array(
 		'client_id' => '96b797d00ead490f8a471e7663ded25d',
-		'tagname' => 'airfrance'
+		'username' => 'qantas',
+		'tagname' => 'australia'
 	),
 
 
@@ -351,7 +352,7 @@ $foot__js__append = array();
 			   YP    dP""""Yb 88  Yb 88 dP""""Yb 88oodP 88ood8 888888 8bodP' 
 		*/
 $devvars = array(
- 	'dev' => false,
+ 	'dev' => true,
  	'log' => '',
 	'pageList' => array(
 		array(

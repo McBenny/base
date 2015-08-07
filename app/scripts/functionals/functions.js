@@ -45,6 +45,7 @@
  * 			.Encode mailto 		FIND_MAILTO
  * 		- Instagram				FIND_INSTAGRAM
  * 		- Public return 		FIND_PUBLIC
+ * 		- Debug Functions		FIND_DEBUG
  * 		
  */
 
@@ -520,51 +521,67 @@ var _functions = function() {
 			88 88 Y88 o.`Y8b   88    dP__Yb  Yb  "88 88"Yb   dP__Yb  88YbdP88 
 			88 88  Y8 8bodP'   88   dP""""Yb  YboodP 88  Yb dP""""Yb 88 YY 88 
 		*/
-	instagramManagement = function () {
-/* 1 */	var ctnr = $('.instagram').find('.listeElts'),
-			liTPL = '<li class="grid__item listeElts__item" title="##TITLE##"><span class="icon icon--comment"></span><div class="item__data"><figure class="item__illustration"><img src="##URL##" alt="##ALT##" class="illustration__image" /></figure><p class="item__like"><span class="icon icon--like"></span>##LIKES## likes</p><p class="item__summary"><span class="icon icon--at"></span><strong>##USER##</strong> ##TEXT##</p></div></li>';
-
-/* 2 */	$.ajax({
+/**
+ * This function calls the Instagram API 
+ * @return {[type]} [description]
+ */
+/**
+ * This function calls the Instagram API to retrieve data representing pictures with associated infos.
+ * @param  {string} client_id The unique reference given by Instagram to identify yourself
+ * @param  {string} tagName		The tagname that is search among all posts in Instagram
+ * @param  {integer} count		The number of pictures to retrieve (< 20)
+ * @return {HTML}				Generates HTML code to present the pictures and all their associated data.
+ */
+	instagramManagement = function (type, client_id, tagname, count) {
+		var ctnr = $('.instagram').find('.pictures-list'),
+			liTPL = '<li class="grid__item pictures-list__item" title="##TITLE##"><div class="item__data"><figure class="item__illustration"><img src="##URL##" alt="##ALT##" class="illustration__image" /></figure><p class="item__like">##LIKES## likes</p><p class="item__summary">##USER## ##TEXT##</p></div></li>',
+			urls = {
+				tagname: 'https://api.instagram.com/v1/tags/' + tagname + '/media/recent?client_id=' + client_id + '&count=' + count,
+				username: 'https://api.instagram.com/' + tagname + '/media/'
+			},
+			url = type === 'username' ? urls.username : urls.tagname;
+		$.ajax({
 			type: 'GET',
 			dataType: 'jsonp',
-/*2.1*/		url: 'https://api.instagram.com/v1/tags/' + _base.vars.socials.instagram.tagname + '/media/recent?client_id=' + _base.vars.socials.instagram.client_id + '&count=20',
+			url: url,
 			success: function (data) {
-console.log(data);
 				var myLis = '',
-				i = 0,
-				nbData = data.data.length,
-				myDatas = data.data,
-				myData,
-				myLikes,
-				myUser,
-				myText,
-				myImg,
-				myLi,
-/*2.2*/			displayData = function (datas) {
-					for (i; i < datas.length; i++) {
-	/* a */				myData = datas[i];
-	/* b */	//			if (myData.user !== null  && myData.user.username !== undefined && myData.user.username == _base.vars.instagram.username) {
-							myLikes = myData.likes.count;
-							myUser = myData.user !== null  && myData.user.username !== undefined? myData.user.username : 'UNKNOWN';
-							myText = myData.caption !== null && myData.caption.text !== undefined ? myData.caption.text : '';
-							myImg = myData.images.thumbnail.url;
+					i = 0,
+					myDatas = data.data !== undefined ? data.data : data.items,
+					nbData = myDatas.length,
+					theData,
+					myLi,
+					displayData = function (datas) {
+						for (i; i < nbData; i++) {
+							theData = datas[i];
+							imgData = {
+								username: theData.user !== null  && theData.user.username !== undefined? theData.user.username : 'UNKNOWN',
+								caption: theData.caption !== null && theData.caption.text !== undefined ? theData.caption.text : '',
+								urls: {
+									thumb: theData.images.thumbnail.url,
+									low: theData.images.low_resolution.url,
+									standard: theData.images.standard_resolution.url
+								},
+								filter: theData.filter !== undefined ? theData.filter : null,
+								likes: theData.likes.count
+							};
+//console.log(imgData);
 							myLi = liTPL;
-	/* c */					myLi = myLi.replace('##TITLE##', _base.vars.socials.instagram.tagname);
-							myLi = myLi.replace('##URL##', myImg);
-							myLi = myLi.replace('##ALT##', _base.vars.socials.instagram.tagname);
-							myLi = myLi.replace('##LIKES##', myLikes);
-							myLi = myLi.replace('##USER##', myUser);
-	/* d */						myText = myText.replace(new RegExp('(#' + _base.vars.socials.instagram.tagname + ')$', 'gi'), '<strong>#' + _base.vars.socials.instagram.tagname + '</strong> ');
-								myText = myText.replace(new RegExp('(#' + _base.vars.socials.instagram.username + ' )', 'gi'), '<strong>#' + _base.vars.socials.instagram.username + '</strong> ');
-							myLi = myLi.replace('##TEXT##', myText);
-	/* e */					myLis += myLi;
-			//			}
-					}
-	/* f */			ctnr.append(myLis);
-				};
+							myLi = myLi.replace('##TITLE##', tagname);
+							myLi = myLi.replace('##URL##', imgData.urls.standard);
+							myLi = myLi.replace('##ALT##', tagname);
+							myLi = myLi.replace('##LIKES##', imgData.likes);
+							myLi = myLi.replace('##USER##', imgData.username);
+								imgData.caption = imgData.caption.replace(new RegExp('(#' + tagname + ')$', 'gi'), '<strong>#' + tagname + '</strong> ');
+								imgData.caption = imgData.caption.replace(new RegExp('(#' + imgData.username + ' )', 'gi'), '<strong>#' + imgData.username + '</strong> ');
+							myLi = myLi.replace('##TEXT##', imgData.caption);
+							myLis += myLi;
+						}
+						ctnr.append(myLis);
+					};
 				displayData(myDatas);
 			},
-/* 8 */		error: function (data) {
+			error: function (data) {
 console.log("error");
 			}
 		});
@@ -593,10 +610,39 @@ console.log("error");
 		instagramManagement: instagramManagement
 	};
 }();
-_functions.instagramManagement();
 
 if (_functions.ghostBar !== undefined) {
 	$(window).scroll(function () {
 		_functions.ghostBar(".ghostBar");
 	});
 }
+
+
+
+
+
+//	FIND_DEBUG
+/*
+	 /$$$$$$$            /$$                          
+	| $$__  $$          | $$                          
+	| $$  \ $$  /$$$$$$ | $$$$$$$  /$$   /$$  /$$$$$$ 
+	| $$  | $$ /$$__  $$| $$__  $$| $$  | $$ /$$__  $$
+	| $$  | $$| $$$$$$$$| $$  \ $$| $$  | $$| $$  \ $$
+	| $$  | $$| $$_____/| $$  | $$| $$  | $$| $$  | $$
+	| $$$$$$$/|  $$$$$$$| $$$$$$$/|  $$$$$$/|  $$$$$$$
+	|_______/  \_______/|_______/  \______/  \____  $$
+	                                         /$$  \ $$
+	                                        |  $$$$$$/
+	                                         \______/ 
+*/
+/**
+ * This function adds a "debug" class on the body tag, enabling debug classes to activate.
+ * @return {null}
+ */
+var f6Debug = function (params) {
+	$("html").addClass("debug");
+	$("[class]").each(function () {
+		var theClasses = $(this).attr("class").split(/\s+/).join(".");
+		$(this).attr("title", $(this)[0].tagName + "." + theClasses);
+	});
+};

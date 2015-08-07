@@ -31,46 +31,43 @@
 
 // Parameters to be moved into the calling page
 $imLocalData = array(
-//	'client_id' => '96b797d00ead490f8a471e7663ded25d',	//	The client ID generated on intagram.com
-	'tagname' => 'airfrance',							//	The tag you're looking for
-	'action' => 'like',				//						LIKE | recommend
-	'url' => 'http://www.yahoo.fr',	//		
-	'layout' => 'standard',			//						STANDARD | button | button_count | box_count
-	'width' => 380,					//						works only with 'layout' = 'standard'
-															//	450 | min-width = 225
-															//	height = 35 | height = 80 (with faces)
-	'faces' => 'false',				//						false
-	'font' => 'segoe ui',			//						LUCIDA GRANDE | arial | segoe ui | tahoma | trebuchet ms | verdana
-	'share' => 'false',				//						false
-	'color' => 'light'				//						LIGHT / dark
+ 	'type' => 'tagname',								//	USERNAME | tagname
+//	'client_id' => '96b797d00ead490f8a471e7663ded25d',	//	The client ID generated on instagram.com
+ 	'username' => 'mcbenny',							//	The username you're looking for
+	'tagname' => 'australia',							//	The tag you're looking for
+	'count' => 2 										//	Defaults to 20 | any number between 1 and 20
 );
 
+$imData = array(
+	'type' => isset($imLocalData['type']) && in_array($imLocalData['type'], array('username', 'tagname')) ? $imLocalData['type'] : 'username',
+	'client_id' => isset($imLocalData['client_id']) ? $imLocalData['client_id'] : (isset($socials['instagram']) && isset($socials['instagram']['client_id']) ? $socials['instagram']['client_id'] : null),
+	'username' => isset($imLocalData['username']) && $imLocalData['username'] != '' ? $imLocalData['username'] : (isset($socials['instagram']) && isset($socials['instagram']['username']) ? $socials['instagram']['username'] : null),
+	'tagname' => isset($imLocalData['tagname']) && $imLocalData['tagname'] != '' ? $imLocalData['tagname'] : (isset($socials['instagram']) && isset($socials['instagram']['tagname']) ? $socials['instagram']['tagname'] : null),
+	'count' => isset($imLocalData['count']) && is_numeric($imLocalData['count']) ? $imLocalData['count'] : 20
+);
 
-/*
-//uncompiled source to be modified then compressed and copied/pasted below
-
-<script type="text/javascript">
-</script>
- */
-
-if ((isset($socials['instagram']) && is_array($socials['instagram'])  && !empty($socials['instagram']['client_id'])) || !empty($imLocalData['client_id']) ) {
-	$imData = array(
-		'url' => isset($fbLocalData['url']) ? $fbLocalData['url'] : "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
-		'layout' => isset($fbLocalData['layout']) ? $fbLocalData['layout'] : 'icon_link',
-		'font' => isset($fbLocalData['font']) ? $fbLocalData['font'] : 'lucida grande',
-		'color' => isset($fbLocalData['color']) ? $fbLocalData['color'] : 'light'
-	);
+if ( ($imData['type'] === 'username' && !empty($imData['username'])) || ($imData['client_id'] != null && $imData['tagname'] != '') ) {
+	if ($imData['type'] === 'username' && !empty($imData['username'])) {
 ?>
-<script type="text/javascript">
-_base.vars.socials.instagram.client_id = '<?php echo $socials['instagram']['client_id']; ?>';
-_base.vars.socials.instagram.tagname = '<?php echo $socials['instagram']['tagname']; ?>';
-</script>
+<script type="text/javascript">_functions.instagramManagement('<?php echo $imData['type']; ?>','','<?php echo $imData['username']; ?>',null);</script>
 <?php
+	} else if ($imData['type'] === 'tagname' && ($imData['client_id'] != null && $imData['tagname'] != '') ) {
+?>
+<script type="text/javascript">_functions.instagramManagement('<?php echo $imData['type']; ?>','<?php echo $imData['client_id']; ?>','<?php echo $imData['tagname']; ?>',<?php echo $imData['count']; ?>);</script>
+<?php
+	}
+	else {
+		if ($devvars['dev']) {
+?>
+<script type="text/javascript">console.info('Parameters invalid for Instagram flow. Code 1');</script>
+<?php
+		}
+	}
 }
 else {
 	if ($devvars['dev']) {
 ?>
-<script type="text/javascript">console.info('Parameters missing for Instagram flow: client_id and/or tagname.');</script>
+<script type="text/javascript">console.info('Parameters invalid for Instagram flow. Code 2');</script>
 <?php
 	}
 }

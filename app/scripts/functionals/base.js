@@ -123,7 +123,8 @@ var _base = function () {
 		socials: {
 			instagram: {
 				client_id: '',
-				tagname: ''
+				tagname: '',
+				count: 20
 			}
 		}
 	},

@@ -534,7 +534,7 @@ var _functions = function() {
  */
 	instagramManagement = function (type, client_id, tagname, count) {
 		var ctnr = $('.instagram').find('.pictures-list'),
-			liTPL = '<li class="grid__item pictures-list__item" title="##TITLE##"><div class="item__data"><figure class="item__illustration"><img src="##URL##" alt="##ALT##" class="illustration__image" /></figure><p class="item__like">##LIKES## likes</p><p class="item__summary">##USER## ##TEXT##</p></div></li>',
+			liTPL = '<li class="grid__item pictures-list__item" title="##TITLE##"><div class="item__data"><figure class="item__illustration"><img src="##URL##" alt="##ALT##" class="illustration__image" /></figure><p class="item__like">##LIKES## likes</p><p class="item__summary"><strong>User: ##USER##</strong><br />Message: ##TEXT##</p></div></li>',
 			urls = {
 				tagname: 'https://api.instagram.com/v1/tags/' + tagname + '/media/recent?client_id=' + client_id + '&count=' + count,
 				username: 'https://api.instagram.com/' + tagname + '/media/'
@@ -553,6 +553,8 @@ var _functions = function() {
 					myLi,
 					displayData = function (datas) {
 						for (i; i < nbData; i++) {
+							var reTag = new RegExp("#" + tagname, "gi"),
+								reUser;
 							theData = datas[i];
 							imgData = {
 								username: theData.user !== null  && theData.user.username !== undefined? theData.user.username : 'UNKNOWN',
@@ -565,15 +567,17 @@ var _functions = function() {
 								filter: theData.filter !== undefined ? theData.filter : null,
 								likes: theData.likes.count
 							};
+							reUser= new RegExp("#" + imgData.username, "gi");
 //console.log(imgData);
+// Display:
 							myLi = liTPL;
 							myLi = myLi.replace('##TITLE##', tagname);
 							myLi = myLi.replace('##URL##', imgData.urls.standard);
 							myLi = myLi.replace('##ALT##', tagname);
 							myLi = myLi.replace('##LIKES##', imgData.likes);
 							myLi = myLi.replace('##USER##', imgData.username);
-								imgData.caption = imgData.caption.replace(new RegExp('(#' + tagname + ')$', 'gi'), '<strong>#' + tagname + '</strong> ');
-								imgData.caption = imgData.caption.replace(new RegExp('(#' + imgData.username + ' )', 'gi'), '<strong>#' + imgData.username + '</strong> ');
+								imgData.caption = imgData.caption.replace(reTag, '<strong>#' + tagname + '</strong> ');
+								imgData.caption = imgData.caption.replace(reUser, '<strong>#' + imgData.username + '</strong> ');
 							myLi = myLi.replace('##TEXT##', imgData.caption);
 							myLis += myLi;
 						}

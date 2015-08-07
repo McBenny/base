@@ -227,8 +227,8 @@ $socials = array(
 		*/
 	'instagram' => array(
 		'client_id' => '96b797d00ead490f8a471e7663ded25d',
-		'username' => 'qantas',
-		'tagname' => 'australia'
+		'username' => 'elvis',
+		'tagname' => 'galah'
 	),
 
 

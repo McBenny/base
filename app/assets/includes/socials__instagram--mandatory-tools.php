@@ -31,10 +31,10 @@
 
 // Parameters to be moved into the calling page
 $imLocalData = array(
- 	'type' => 'tagname',								//	USERNAME | tagname
+	'type' => 'tagname',								//	USERNAME | tagname
 //	'client_id' => '96b797d00ead490f8a471e7663ded25d',	//	The client ID generated on instagram.com
- 	'username' => 'mcbenny',							//	The username you're looking for
-	'tagname' => 'australia',							//	The tag you're looking for
+	'username' => 'elvis',								//	The username you're looking for
+	'tagname' => 'galah',								//	The tag you're looking for
 	'count' => 2 										//	Defaults to 20 | any number between 1 and 20
 );
 
@@ -47,6 +47,11 @@ $imData = array(
 );
 
 if ( ($imData['type'] === 'username' && !empty($imData['username'])) || ($imData['client_id'] != null && $imData['tagname'] != '') ) {
+?>
+<div class="instagram">
+	<ul class="pictures-list"></ul>
+</div>
+<?php
 	if ($imData['type'] === 'username' && !empty($imData['username'])) {
 ?>
 <script type="text/javascript">_functions.instagramManagement('<?php echo $imData['type']; ?>','','<?php echo $imData['username']; ?>',null);</script>

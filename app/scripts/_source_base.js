@@ -359,24 +359,6 @@ Object.size = function (obj) {
 			floatingEltFixed = false;
 		}
 	},
-/*
-	Gestion d'une navigation "fantôme"
-*/
-	ghostStart = $('header').outerHeight(),
-//	ghostNav = $('#ghostNav'),
-	ghostNavHeight = 75,
-	ghostNav = function () {
-		var scrollTop = $(window).scrollTop();
-		if (scrollTop > ghostStart) {
-			if (scrollTop < ghostStart + ghostNavHeight) {
-				ghostNav.height(scrollTop - ghostStart);
-			} else {
-				ghostNav.height(ghostNavHeight);
-			}
-		} else {
-			ghostNav.height(0);
-		}
-	},
 
 /*
 	This function splits lists
@@ -407,8 +389,6 @@ Object.size = function (obj) {
 		extractUrl:		extractUrl,
 		handleAjax:		handleAjax,
 		handleIE6:		handleIE6,
-//		floatElt:		floatElt,
-//		ghostNav:		ghostNav,
 		forms:			{
 						placeHolder:	placeHolder,
 						autoSize:	autoSize

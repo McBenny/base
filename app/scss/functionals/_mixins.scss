@@ -34,6 +34,7 @@
 /**
  * 		- CSSWizardry			FIND_CSS_WIZARDRY
  * 			.grid--center		FIND_GRID_CENTER
+ * 		- Font-Family 			FIND_FONT_FAMILY
  * 		- font-size rewritten	FIND_FONT_SIZE
  * 		- Border-radius 		FIND_BORDER_RADIUS
  */
@@ -90,6 +91,53 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
 
 	> #{$class-type}grid__item {
 		text-align:left;
+	}
+}
+
+
+
+
+
+//	FIND_FONT_FAMILY
+/* 
+	  /$$$$$$                      /$$           /$$$$$$                        /$$ /$$          
+	 /$$__  $$                    | $$          /$$__  $$                      |__/| $$          
+	| $$  \__//$$$$$$  /$$$$$$$  /$$$$$$       | $$  \__//$$$$$$  /$$$$$$/$$$$  /$$| $$ /$$   /$$
+	| $$$$   /$$__  $$| $$__  $$|_  $$_//$$$$$$| $$$$   |____  $$| $$_  $$_  $$| $$| $$| $$  | $$
+	| $$_/  | $$  \ $$| $$  \ $$  | $$ |______/| $$_/    /$$$$$$$| $$ \ $$ \ $$| $$| $$| $$  | $$
+	| $$    | $$  | $$| $$  | $$  | $$ /$$     | $$     /$$__  $$| $$ | $$ | $$| $$| $$| $$  | $$
+	| $$    |  $$$$$$/| $$  | $$  |  $$$$/     | $$    |  $$$$$$$| $$ | $$ | $$| $$| $$|  $$$$$$$
+	|__/     \______/ |__/  |__/   \___/       |__/     \_______/|__/ |__/ |__/|__/|__/ \____  $$
+	                                                                                    /$$  | $$
+	                                                                                   |  $$$$$$/
+	                                                                                    \______/ 
+ */
+/**
+ * Inserts all the lines necessary to import a font. Just provide the name of the font and the base path and name.
+ * 
+ * 		@include fontFace("Open Sans", "http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw")
+ * 		
+ * @param  {string} $family        						The name to use for the font
+ * @param  {string} $src           						The base of the file names containing the fonts (full path included but without extension)
+ *                                       				Supported exts: eot, woff2, woff, ttf, svg
+ * @param  {string} $alternatives:"arial, sans-serif" 	The alternative fonts to provide if the defined font is not available
+ * @param  {string} $style:normal  						The style to apply, defaults to "normal"
+ * @param  {string} $weight:normal 						The weight to apply, defaults to "normal"
+ * @return {string}                						The CSS code to call the police
+ *
+ * https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss - 20150817
+ */
+@mixin fontFace($family, $src, $alternatives:"arial, sans-serif", $style:normal, $weight:normal) {
+	@font-face {
+		font-family: $family, $alternatives;
+		src: url('#{$src}.eot'); // IE9 compat
+		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+			 url('#{$src}.woff2') format('woff2'), // standards
+			 url('#{$src}.woff') format('woff'), // standards
+			 url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+			 url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+		font-style: $style;
+		font-weight: $weight;
 	}
 }
 

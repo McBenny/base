@@ -1,6 +1,6 @@
 #_design
 
-##_work
+##_design/_work
 
 This is where you can store all the temporary images you create for to the project.
 
